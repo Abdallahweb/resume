@@ -365,7 +365,7 @@ input[type=checkbox] {
 
 @media screen and (max-width:750px) {
     body {
-        background-image: linear-gradient(to bottom, #000, 30%, transparent, #000) , url(../img/backimg.jpg)
+        background-image: linear-gradient(to bottom, #000, 50%, transparent, #000) , url(../img/backimg.jpg)
     }
 
     .background {
