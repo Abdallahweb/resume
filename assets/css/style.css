@@ -31,7 +31,7 @@ ul li a {
 }
 
 body {
-    background-image: linear-gradient(to top, #000, 60%, transparent , #000), url('../img/backimg.jpg');
+    background-image: linear-gradient(to top right, #000, 60%, transparent, #000), url('../img/backimg.jpg');
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
@@ -365,16 +365,17 @@ input[type=checkbox] {
 
 @media (max-width: 576px) {
     body {
-        background-image: linear-gradient(to bottom, #000, 50%, transparent, #000) , url(../img/backimg.jpg)
+        background-image: linear-gradient(to bottom, #000, 50%, transparent, #000), url(../img/backimg.jpg)
     }
 
 }
+
 @media screen and (max-width:750px) {
     body {
-        background-image: linear-gradient(to bottom, #000, 50%, transparent, #000) , url(../img/backimg.jpg)
+        background-image: linear-gradient(to bottom, #000, 50%, transparent, #000), url(../img/backimg.jpg)
     }
 
-        .background {
+    .background {
         position: absolute;
         top: 41%;
         left: 50%;
