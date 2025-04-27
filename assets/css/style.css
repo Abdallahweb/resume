@@ -369,6 +369,18 @@ input[type=checkbox] {
     body {
         background-image: linear-gradient(to bottom, #000, 50%, transparent, #000), url(../img/backimg.jpg)
     }
+    
+    .background {
+        position: absolute;
+        height:200px;
+        margin-top: -100px;
+        left: 50%;
+        width: 95%;
+        transform: translate(-50%);
+        text-align: center
+    }
+
+
 
 }
 
