@@ -363,12 +363,18 @@ input[type=checkbox] {
     font-size: 12px;
 }
 
+@media (max-width: 576px) {
+    body {
+        background-image: linear-gradient(to bottom, #000, 50%, transparent, #000) , url(../img/backimg.jpg)
+    }
+
+}
 @media screen and (max-width:750px) {
     body {
         background-image: linear-gradient(to bottom, #000, 50%, transparent, #000) , url(../img/backimg.jpg)
     }
 
-    .background {
+        .background {
         position: absolute;
         top: 41%;
         left: 50%;
