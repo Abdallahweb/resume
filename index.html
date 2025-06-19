@@ -65,13 +65,73 @@
                             </div>
                 </div>
             </div>
-            <script src="./query.js"></script>
+    <script src="assets/js/query.js"></script>
             <script>$(".link-menu").click(function () { $("#active").prop('checked', false); }) </script>
             <script>anime.timeline({ loop: false }).add({ targets: '.ml15 .word', scale: [14, 1], opacity: [0, 1], easing: "easeOutCirc", duration: 800, delay: (el, i) => 400 * i }).add({ targets: '.ml15', opacity: 1, duration: 100, easing: "easeOutExpo", delay: 100 }); var textWrapper = document.querySelector('.ml6 .letters'); textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>"); var textWrappers = document.querySelector('.ml6 .letterss'); textWrappers.innerHTML = textWrappers.textContent.replace(/\S/g, "<span class='letter'>$&</span>"); anime.timeline({ loop: false }).add({ targets: '.ml6 .letter', translateY: ["1.1em", 0], translateZ: 0, duration: 1500, delay: (el, i) => 50 * i }).add({ targets: '.ml6', opacity: 1, duration: 1500, easing: "easeOutExpo", delay: 1000 }); anime.timeline({ loop: false }).add({ targets: '.ml6 .letter', translateY: ["1.1em", 0], translateZ: 0, duration: 1500, delay: (el, i) => 50 * i }).add({ targets: '.ml6', opacity: 1, duration: 1500, easing: "easeOutExpo", delay: 1000 }); </script>
             <script src="js/wow.min.js"></script>
             <script>new WOW().init();</script>
             <script src="./assets/js/cursor.js"></script>
             <script>new kursor({ type: 1, removeDefaultCursor: true, color: "rgb(255,255,255)" }) </script>
+
+                            <script>
+
+
+$(document).onkeydown = function(e) {
+if (e.ctrlKey && 
+(e.keyCode === 67 || 
+e.keyCode === 86 || 
+e.keyCode === 85 || 
+e.keyCode === 117)) {
+return false;
+} else {
+return true;
+}
+};
+$(document).keypress("u",function(e) {
+if(e.ctrlKey)
+{
+return false;
+}
+else
+{
+return true;
+}
+});
+
+document.addEventListener("contextmenu", function (e){
+e.preventDefault();
+}, false);
+
+
+$(document).keydown(function (event) {
+if (event.keyCode == 123) { // Prevent F12
+return false;
+} else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
+return false;
+}
+});
+
+document.addEventListener("keydown", function (event){
+
+if (event.ctrlKey){
+
+event.preventDefault();
+
+}
+
+if(event.keyCode == 123){
+
+event.preventDefault();
+
+}
+
+})
+
+
+
+
+</script>
+
 </body>
 
 </html>
