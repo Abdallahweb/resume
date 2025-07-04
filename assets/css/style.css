@@ -57,7 +57,7 @@ ul li::after {
 .cv {
     width: 220px;
     height: 46px;
-    background-color: #fd1736;
+    background-color: #f00;
     border-radius: 999px;
     font-weight: 700;
     border: none;
@@ -69,7 +69,7 @@ ul li::after {
 .cv:hover {
     background: 0 0;
     border: none;
-    box-shadow: 0 0 20px #fd1736
+    box-shadow: 0 0 20px #f00
 }
 
 .background,
@@ -147,7 +147,7 @@ ul li a {
     border-radius: 50%;
     font-size: 20px;
     border: none;
-    background-color: #fd1736
+    background-color: #f00
 }
 
 .fa-bars {
@@ -180,18 +180,18 @@ ul li a {
     font-size: 45px;
     left: 50%;
     transform: translate(-50%);
-    color: #fd1736
+    color: #f00
 }
 
 ul li a:hover {
     transform: scale(1.5);
     opacity: 1;
-    color: #fd1736
+    color: #f00
 }
 
 ul:hover li a {
     opacity: 0;
-    color: #fd1736
+    color: #f00
 }
 
 ul li::after {
@@ -238,7 +238,7 @@ input[type=checkbox] {
 .fa-briefcase,
 .fa-user {
     padding: 5px;
-    color: #fd1736;
+    color: #f00;
     border-radius: 50%;
     font-size: 10px;
     background-color: #fff;
@@ -257,7 +257,7 @@ input[type=checkbox] {
 .btn-52 {
     -webkit-tap-highlight-color: #000;
     appearance: button;
-background-color: #fd1736;backdrop-filter: blur(10px);
+background-color: #f00;backdrop-filter: blur(10px);
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     font-size: 100%;
     line-height: 1.3;
