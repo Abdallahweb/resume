@@ -1,3 +1,4 @@
+
 // Ensure jQuery is loaded before running this.
 $(document).ready(function() {
     // 1. Menu Link Click Handler (Closing the burger menu on navigation)
@@ -10,15 +11,15 @@ $(document).ready(function() {
     anime.timeline({ loop: false })
         .add({
             targets: '.ml15 .word',
-            scale: [14, 1],
+            scale: [1.5, 1],
             opacity: [0, 1],
-            easing: "easeOutCirc",
-            duration: 800,
-            delay: (el, i) => 400 * i
+            easing: "easeInCirc",
+            duration: 500,
+            delay: (el, i) => 200 * i
         }).add({
             targets: '.ml15',
             opacity: 1,
-            duration: 100,
+            duration: 300,
             easing: "easeOutExpo",
             delay: 100
         });
