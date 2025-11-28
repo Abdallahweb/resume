@@ -1,535 +1,474 @@
-<!DOCTYPE html>
-<html lang="en">
+/*======================================================
+    1. GLOBAL STYLES & RESET
+======================================================*/
+body {
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="description" content="Abdallah Fouad - Web Developer Resume, Portfolio.">
-    <meta property="og:title" content="Abdallah Fouad - Resume">
-    <meta property="og:type" content="website">
-    <title>Abdallah Fouad | Web Developer</title>
-    <link rel="icon" href="assets/img/icon.jpg">
+/*======================================================
+    2. TYPOGRAPHY & TEXT UTILITIES
+======================================================*/
+.section-title h2,
+.section-title p {
+    font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;font-display:swap;
+}
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+/*======================================================
+    3. NAVIGATION & MENU (SIDEBAR) STYLES
+======================================================*/
+.menu-btn,
+.wrapper {
+    position: fixed;
+    transition: 0.2s ease-in-out;
+}
 
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+.menu,
+li {
+    display: flex;
+    flex-direction: column;
+}
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+#active:checked ~ .menu-btn,
+.menu-btn {
+    color: #fff;
+}
 
-    <link href="assets/css/cursor.css" rel="stylesheet">
-    <link href="assets/css/portfolio.css" rel="stylesheet">
-</head>
+.wrapper {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(7px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: circle(25px at calc(100% - 45px) 45px);
+}
 
-<body>
-    <div class="animate-bottom">
+#active:checked ~ .wrapper {
+    clip-path: circle(75%);
+    z-index: 100;
+}
 
-        <input id="active" type="checkbox">
-        <label class="menu-btn" for="active"><i class="fas fa-bars"></i></label>
+.menu-btn {
+    top: 20px;
+    right: 20px;
+    z-index: 200;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    border: none;
+    background-color: rgba(236, 0, 31, 0.664);
+}
 
-        <div class="wrapper">
-            <section class="menu">
-                <ul>
-                    <li class="link1" data-text="HOME"><a href="./index.html" class="link-menu">HOME</a></li>
-                    <li class="link1" data-text="PORTFOLIO"><a href="./portfolio.html" class="link-menu">PORTFOLIO</a></li>
-                    <li class="link1" data-text="ABOUT"><a href="./about.html" class="link-menu">ABOUT</a></li>
-                </ul>
-                <div>
-                    <a href="https://abdallahweb.github.io/resume/Abdallah%20Fouad%20CV.pdf">
-                        <button class="cv">
-                            <i class="fas fa-download"></i> DOWNLOAD CV
-                        </button>
-                    </a>
-                </div>
-            </section>
-        </div>
-        <section class="portfolio" id="portfolio">
-            <div class="container">
-                <div class="section-title">
-                    <br>
-                    <h2 class="animate__animated animate__fadeIn">Portfolio</h2>
-                    <p class="animate__animated animate__fadeIn">My Works</p>
-                </div>
+.fa-bars {
+    margin-top: 15px;
+}
 
-                <div class="row">
-                    <div class="col-lg-12 d-flex justify-content-center">
-                        <ul id="portfolio-flters">
-                            <li data-filter="*" class="filter-active">All (32)</li>
-                            <li data-filter=".filter-web">Websites (4)</li>
-                            <li data-filter=".filter-laravel">Laravel (4)</li>
-                            <li data-filter=".filter-php">Php (4)</li>
-                            <li data-filter=".filter-ajax">Ajax (1)</li>
-                            <li data-filter=".filter-java">JavaScript (6)</li>
-                            <li data-filter=".filter-jquery">Jquery (3)</li>
-                            <li data-filter=".filter-api">Api (2)</li>
-                            <li data-filter=".filter-oop">Oop (2)</li>
-                            <li data-filter=".filter-bootstrap">Bootstrap (1)</li>
-                            <li data-filter=".filter-visualbasic">Visual Basic / C# (5)</li>
-                        </ul>
-                    </div>
-                </div>
+#active:checked ~ .menu-btn i:before {
+    content: "\f00d";
+    z-index: 100;
+}
 
-                <div class="row portfolio-container">
-                    
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-laravel">
-                        <div class="portfolio-wrap">
-                            <img alt="E-Commerce Website" class="img-fluid" src="assets/img/portfolio/Ecommerce.webp">
-                            <div class="portfolio-info">
-                                <h4>E-Commerce Website</h4>
-                                <p>E-Commerce Project Using Laravel</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/Ecommerce.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://ecomlaravel.42web.io/" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+.menu {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-laravel">
-                        <div class="portfolio-wrap">
-                            <img alt="Multi Store Project" class="img-fluid" src="assets/img/portfolio/MultiStore.webp">
-                            <div class="portfolio-info">
-                                <h4>Multi Store Project</h4>
-                                <p>Multi Store Project Using Laravel</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/MultiStore.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://storelaravel.infinityfreeapp.com/view_stores" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+ul {
+    text-align: center;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img alt="Vreal Tour" class="img-fluid" src="assets/img/portfolio/VrealTour.webp">
-                            <div class="portfolio-info">
-                                <h4>VReal Tour</h4>
-                                <p>Website For VR Services</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/VrealTour.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://vrealtour.com/" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+li {
+    list-style: none;
+    margin: 9px auto;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img alt="Vreal Car" class="img-fluid" src="assets/img/portfolio/VrealCar.png">
-                            <div class="portfolio-info">
-                                <h4>VReal Car</h4>
-                                <p>Website For Cars Services</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/VrealCar.png" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://vrealcar.com/" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+.link1 {
+    padding-bottom: 75px;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img alt="Rrstate" class="img-fluid" src="assets/img/portfolio/Rrstate.webp">
-                            <div class="portfolio-info">
-                                <h4>Rrstate</h4>
-                                <p>Website For Real Estate Services</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/Rrstate.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://rrstate.com/" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+ul li a {
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 4px;
+    border-radius: 20px;
+    display: inline-block;
+    transition: 0.5s;
+    position: absolute;
+    font-size: 45px;
+    left: 50%;
+    transform: translate(-50%);
+    color: rgba(236, 0, 31, 0.664);
+    background: linear-gradient(to right, rgba(236, 0, 31, 0.664), rgba(236, 0, 31, 0.664), #fff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-php">
-                        <div class="portfolio-wrap">
-                            <img alt="Cibs Soft" class="img-fluid" src="assets/img/portfolio/cibs.webp">
-                            <div class="portfolio-info">
-                                <h4>Cibs Soft</h4>
-                                <p>Website For Software Services</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/cibs.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://cibssoft.com/" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+ul li a:hover,
+.portfolio .portfolio-wrap .portfolio-links a:hover {
+    transform: scale(1.5);
+    opacity: 1;
+    color: rgba(236, 0, 31, 0.664);
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img alt="Engineering House" class="img-fluid" src="assets/img/portfolio/EngineeringHouse.webp">
-                            <div class="portfolio-info">
-                                <h4>Engineering House</h4>
-                                <p>Website For Engineering Services</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/EngineeringHouse.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+ul:hover li a {
+    opacity: 0;
+    color: rgba(236, 0, 31, 0.664);
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-php">
-                        <div class="portfolio-wrap">
-                            <img alt="Chat App Using Php" class="img-fluid" src="assets/img/portfolio/ChatApp.webp">
-                            <div class="portfolio-info">
-                                <h4>Chat App Using Php</h4>
-                                <p>Chat App Using Php</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/ChatApp.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://chatappphp.42web.io/index.php" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+ul li::after {
+    content: attr(data-text);
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    font-weight: 900;
+    opacity: 0;
+    pointer-events: none;
+    letter-spacing: 50px;
+    transition: 0.5s;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-php">
-                        <div class="portfolio-wrap">
-                            <img alt="Hr System Using Php" class="img-fluid" src="assets/img/portfolio/CrudPhp.webp">
-                            <div class="portfolio-info">
-                                <h4>Hr System Using Php</h4>
-                                <p>Crud Project Using Php</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/CrudPhp.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://abdallah.42web.io/index.php" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+ul li:hover:after {
+    opacity: 0.5;
+    letter-spacing: 5px;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-php">
-                        <div class="portfolio-wrap">
-                            <img alt="E-commerce Project" class="img-fluid" src="assets/img/portfolio/EcommercePhp.webp">
-                            <div class="portfolio-info">
-                                <h4>E-commerce Project</h4>
-                                <p>E-commerce Project Using Php</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/EcommercePhp.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+input[type=checkbox] {
+    display: none;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-java">
-                        <div class="portfolio-wrap">
-                            <img alt="X - O Game" class="img-fluid" src="assets/img/portfolio/X-O Game.webp">
-                            <div class="portfolio-info">
-                                <h4>Javascript Project</h4>
-                                <p>X - O Game Using Javascript</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/X-O Game.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://abdallahweb.github.io/Game-X-O/" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+.cv {
+    width: 220px;
+    height: 46px;
+    background-color: rgba(236, 0, 31, 0.664);
+    color: #fff;
+    border-radius: 999px;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 15px;
+    letter-spacing: 1px;
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-java">
-                        <div class="portfolio-wrap">
-                            <img alt="Squid Game" class="img-fluid" src="assets/img/portfolio/Squid.webp">
-                            <div class="portfolio-info">
-                                <h4>Javascript Project</h4>
-                                <p>Squid Game Using Javascript</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/Squid.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://abdallahweb.github.io/Squid/" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-java">
-                        <div class="portfolio-wrap">
-                            <img alt="Alarm" class="img-fluid" src="assets/img/portfolio/alarm.webp">
-                            <div class="portfolio-info">
-                                <h4>Javascript Project</h4>
-                                <p>Alarm Using Javascript</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/alarm.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://abdallahweb.github.io/Alarm" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+.cv:hover {
+    background: transparent;
+    border: none;
+    box-shadow: 0 0 20px rgba(236, 0, 31, 0.664);
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-java">
-                        <div class="portfolio-wrap">
-                            <img alt="Crud Project" class="img-fluid" src="assets/img/portfolio/CrudJavaScript.webp">
-                            <div class="portfolio-info">
-                                <h4>Javascript Project</h4>
-                                <p>Crud Project Using Javascript</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/CrudJavaScript.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://abdallahweb.github.io/Crud/" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+.fa-download {
+    padding: 9px;
+    background-color: rgba(236, 0, 31, 0.664);
+    color: #fff;
+    backdrop-filter: blur(2px);
+    border-radius: 50%;
+    margin-right: 2px;
+    font-size: 13px;
+    font-family: "Font Awesome 6 Free";
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-java">
-                        <div class="portfolio-wrap">
-                            <img alt="Photo Filter" class="img-fluid" src="assets/img/portfolio/PhotoFilter.webp">
-                            <div class="portfolio-info">
-                                <h4>Javascript Project</h4>
-                                <p>Photo Filter Using Javascript</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/PhotoFilter.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://abdallahweb.github.io/Filter/" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+/*======================================================
+    4. SECTION TITLES & HEADINGS
+======================================================*/
+.section-title h2 {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0;
+    line-height: 1px;
+    margin: 60px 0 20px;
+    letter-spacing: 2px;
+    color: #aaa;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-java">
-                        <div class="portfolio-wrap">
-                            <img alt="Javascript Project" class="img-fluid" src="assets/img/portfolio/Javascript.webp">
-                            <div class="portfolio-info">
-                                <h4>Javascript Project</h4>
-                                <p>Javascript Project</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/Javascript.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://vrealtour.com/plan" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+.section-title h2::after {
+    content: "";
+    width: 120px;
+    height: 1px;
+    display: inline-block;
+    background: rgba(236, 0, 31, 0.664);
+    margin: 4px 10px;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-jquery">
-                        <div class="portfolio-wrap">
-                            <img alt="Game Project - Hunter" class="img-fluid" src="assets/img/portfolio/hunter.webp">
-                            <div class="portfolio-info">
-                                <h4>Game Project</h4>
-                                <p>Game Using Jquery</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/hunter.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://abdallahweb.github.io/hunter" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+.section-title p {
+    margin: -15px 0 15px;
+    font-size: 36px;
+    font-weight: 700;
+    background: linear-gradient(to right, #5f5f5f, #fff, #fff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-jquery">
-                        <div class="portfolio-wrap">
-                            <img alt="Sebha Using Jquery" class="img-fluid" src="assets/img/portfolio/sebha.webp">
-                            <div class="portfolio-info">
-                                <h4>Jquery Project</h4>
-                                <p>Sebha Using Jquery</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/sebha.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://abdallahweb.github.io/Sebha" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+/*======================================================
+    5. PORTFOLIO FILTERING (Flters)
+======================================================*/
+.portfolio .portfolio-item {
+    margin-bottom: 30px;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-jquery">
-                        <div class="portfolio-wrap">
-                            <img alt="Motorcycle Game" class="img-fluid" src="assets/img/portfolio/motor.webp">
-                            <div class="portfolio-info">
-                                <h4>Game Project</h4>
-                                <p>Game Using Jquery</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/motor.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://abdallahweb.github.io/Motorcycle_Game/" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+.portfolio #portfolio-flters {
+    padding: 2px 15px;
+    margin: 0 auto 15px;
+    list-style: none;
+    text-align: center;
+    border-radius: 50px;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-oop">
-                        <div class="portfolio-wrap">
-                            <img alt="Boxing Game" class="img-fluid" src="assets/img/portfolio/Boxing.webp">
-                            <div class="portfolio-info">
-                                <h4>Oop Project</h4>
-                                <p>Boxing Game Using Oop</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/Boxing.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://abdallahweb.github.io/Boxing/" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+.portfolio #portfolio-flters li {
+    display: inline-block;
+    padding: 8px 16px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.096);
+    backdrop-filter: blur(16px) saturate(180%);
+    margin: 0 3px 10px;
+    transition: 0.3s ease-in-out;
+    border-radius: 4px;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-oop">
-                        <div class="portfolio-wrap">
-                            <img alt="Snake Game" class="img-fluid" src="assets/img/portfolio/Snake.webp">
-                            <div class="portfolio-info">
-                                <h4>Oop Project</h4>
-                                <p>Snake Game Using Oop</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/Snake.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://abdallahweb.github.io/Snake/" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+.portfolio #portfolio-flters li.filter-active,
+.portfolio #portfolio-flters li:hover {
+    background: rgba(236, 0, 31, 0.664);
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-ajax">
-                        <div class="portfolio-wrap">
-                            <img alt="Ajax Project" class="img-fluid" src="assets/img/portfolio/Ajax.webp">
-                            <div class="portfolio-info">
-                                <h4>Ajax Project With Php</h4>
-                                <p>Crud And Search Using Ajax</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/Ajax.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://crudajax.infinityfreeapp.com/?i=1" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+.portfolio #portfolio-flters li:last-child {
+    margin-right: 0;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-api">
-                        <div class="portfolio-wrap">
-                            <img alt="Prayer Timings Using Api" class="img-fluid" src="assets/img/portfolio/adan-api.webp">
-                            <div class="portfolio-info">
-                                <h4>Api Project</h4>
-                                <p>Prayer Timings Using Api</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/adan-api.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://abdallahweb.github.io/Adan-Api/" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+/*======================================================
+    6. PORTFOLIO ITEM WRAPPER & HOVER EFFECTS
+======================================================*/
+.portfolio .portfolio-wrap {
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6);
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-api">
-                        <div class="portfolio-wrap">
-                            <img alt="Country Details Using Api" class="img-fluid" src="assets/img/portfolio/api.webp">
-                            <div class="portfolio-info">
-                                <h4>Api Project</h4>
-                                <p>Country Details Using Api</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/api.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://abdallahweb.github.io/Country-Api/" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+.portfolio .portfolio-wrap::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.438);
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    top: 30px;
+    bottom: 30px;
+    transition: 0.3s ease-in-out;
+    z-index: 2;
+    backdrop-filter: blur(3px);
+    opacity: 0;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-laravel">
-                        <div class="portfolio-wrap">
-                            <img alt="School System" class="img-fluid" src="assets/img/portfolio/school.webp">
-                            <div class="portfolio-info">
-                                <h4>School System</h4>
-                                <p>School System Using Laravel</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/school.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+.portfolio .portfolio-wrap:hover::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-laravel">
-                        <div class="portfolio-wrap">
-                            <img alt="Jobs Project" class="img-fluid" src="assets/img/portfolio/laravel.webp">
-                            <div class="portfolio-info">
-                                <h4>Jobs Project</h4>
-                                <p>Jobs Project Using Laravel</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/laravel.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+.portfolio .portfolio-wrap .portfolio-info {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    z-index: 3;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-visualbasic">
-                        <div class="portfolio-wrap">
-                            <img alt="Store Program" class="img-fluid" src="assets/img/portfolio/store.webp">
-                            <div class="portfolio-info">
-                                <h4>Store Program</h4>
-                                <p>Store Program Using C#</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/store.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+.portfolio .portfolio-wrap:hover .portfolio-info {
+    opacity: 1;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-visualbasic">
-                        <div class="portfolio-wrap">
-                            <img alt="Voicer Program" class="img-fluid" src="assets/img/portfolio/voicer.webp">
-                            <div class="portfolio-info">
-                                <h4>Voicer Program</h4>
-                                <p>Voicer Program Using Visual Basic</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/voicer.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+.portfolio .portfolio-wrap .portfolio-info h4 {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-visualbasic">
-                        <div class="portfolio-wrap">
-                            <img alt="Screen Shot Program" class="img-fluid" src="assets/img/portfolio/screen.webp">
-                            <div class="portfolio-info">
-                                <h4>Screen Shot Program</h4>
-                                <p>Screen Shot Program Using Visual Basic</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/screen.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+.portfolio .portfolio-wrap .portfolio-info p {
+    color: #fff;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-visualbasic">
-                        <div class="portfolio-wrap">
-                            <img alt="Library Program" class="img-fluid" src="assets/img/portfolio/library.webp">
-                            <div class="portfolio-info">
-                                <h4>Library Program</h4>
-                                <p>Library Program Using C#</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/library.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+.portfolio .portfolio-wrap .portfolio-info::before {
+    display: block;
+    content: "";
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    border-top: 3px solid #fff;
+    border-left: 3px solid #fff;
+    transition: 0.5s;
+    z-index: 9994;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-visualbasic">
-                        <div class="portfolio-wrap">
-                            <img alt="Vacation Program" class="img-fluid" src="assets/img/portfolio/vaction.webp">
-                            <div class="portfolio-info">
-                                <h4>Vacation Program</h4>
-                                <p>Vacation Program Using C#</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/vaction.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+.portfolio .portfolio-wrap .portfolio-info::after {
+    display: block;
+    content: "";
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    bottom: 35px;
+    right: 35px;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+    transition: 0.5s;
+    z-index: 9994;
+}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-bootstrap">
-                        <div class="portfolio-wrap">
-                            <img alt="Medical Website" class="img-fluid" src="assets/img/portfolio/MedicalWebsite.webp">
-                            <div class="portfolio-info">
-                                <h4>Bootstrap Project</h4>
-                                <p>Medical Website Using Bootstrap</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/MedicalWebsite.webp" class="portfolio-lightbox" data-gallery="portfolioGallery"><i class="bx bx-plus"></i></a>
-                                    <a href="https://abdallahweb.github.io/Medical/" target="_blank"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-        </section>
-        </div>
+.portfolio .portfolio-wrap:hover .portfolio-info::before {
+    top: 15px;
+    left: 15px;
+}
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/query.js"></script>
-    <script src="assets/js/cursor.js"></script>
-    <script src="assets/js/script.js"></script>
-</body>
+.portfolio .portfolio-wrap:hover .portfolio-info::after {
+    bottom: 15px;
+    right: 15px;
+}
 
-</html>
+.portfolio .portfolio-wrap .portfolio-links {
+    text-align: center;
+    z-index: 4;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a {
+    color: #fff;
+    margin: 0 2px;
+    font-size: 28px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+/*======================================================
+    7. PORTFOLIO DETAILS (Modal/Popup)
+======================================================*/
+.portfolio-details {
+    padding-top: 40px;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+.portfolio-details .container {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.portfolio-details .portfolio-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.portfolio-details .portfolio-info {
+    padding-top: 45px;
+}
+
+.portfolio-details .portfolio-info h3 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.portfolio-details .portfolio-info ul {
+    list-style: none;
+    padding: 0;
+    font-size: 15px;
+    text-align: left;
+}
+
+.portfolio-details .portfolio-info ul li + li {
+    margin-top: 10px;
+}
+
+.portfolio-details .portfolio-info p {
+    font-size: 15px;
+    padding: 15px 0 0;
+}
+
+.portfolio-details .swiper-pagination {
+    margin-top: 20px;
+    position: relative;
+}
+
+.portfolio-details .swiper-pagination .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.portfolio-details .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: rgba(236, 0, 31, 0.664);
+}
+
+/*======================================================
+    8. ANIMATION KEYFRAMES
+======================================================*/
+@keyframes rotate {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes wipe-enter {
+    0% { transform: scale(0, 0.025); }
+    50% { transform: scale(1, 0.025); }
+}
+
+/*======================================================
+    9. MEDIA QUERIES
+======================================================*/
+@media (max-width: 992px) {
+    .portfolio-details .portfolio-info {
+        padding-top: 20px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .wrapper ul {
+        position: absolute;
+        top: 180px;
+    }
+    .cv {
+        position: absolute;
+        top: 450px;
+        margin-left: 5px;
+    }
+    .wrapper {
+        padding-left: 10px;
+    }
+}
