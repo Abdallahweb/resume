@@ -20,8 +20,8 @@ langSwitcher.querySelector('.lang-option[data-lang="AR"]').classList.add('active
 
 document.dir = "rtl";
 Home_Menu.setAttribute('data-text', 'الرئيسبة');
-About_Menu.setAttribute('data-text', 'عني');
-Portfolio_Menu.setAttribute('data-text', 'نماذج');
+About_Menu.setAttribute('data-text', 'المزيد عني');
+Portfolio_Menu.setAttribute('data-text', 'نماذج أعمالي');
 langSwitcher.classList.remove('en-active'); 
  langSwitcher.classList.add('ar-active');
 
@@ -203,8 +203,8 @@ Home_Page_title : "عبدالله فؤاد | مطور ويب",
 EN : "EN",
 AR : "AR",
 Home_Menu : "الرئيسية",
-Portfolio_Menu : "نماذج",
-About_Menu : "عني",
+Portfolio_Menu : "نماذج أعمالي",
+About_Menu : "المزيد عني",
 Download : "تحميل السيرة الذاتية",
 
 // Portfolio Page
