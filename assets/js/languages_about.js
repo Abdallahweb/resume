@@ -164,7 +164,7 @@ Home_Page_title : "عبدالله فؤاد | مطور ويب",
 EN : "EN",
 AR : "AR",
 Home_Menu : "الرئيسية",
-Portfolio_Menu : "نماذج أعمالي",
+Portfolio_Menu : "نماذج",
 About_Menu : "عني",
 Download : "تحميل السيرة الذاتية",
 
