@@ -1,0 +1,548 @@
+:root {
+    --primary-color: rgb(173, 1, 24);
+    --primary-color-alpha: rgb(173, 1, 24);
+    --light-color: #fff;
+    --dark-color: #000;
+    --text-faint-color: #918e8e;
+    --background-dark: #000;
+    --transition-speed: 0.3s;
+    --box-shadow-light: inset 0 0 20px 0px rgb(173, 1, 24)
+}
+
+body {
+    padding: 0px;
+    margin: 150px 0px;
+    background-color: var(--background-dark);
+    font-family: "Cairo", Noto Kufi Arabic , sans-serif !important;
+    margin-bottom: 100px;
+    direction:rtl;
+}
+
+
+/* Start language-switcher */
+
+
+.language-switcher {
+    z-index: 2;
+  display: flex;
+  width: 120px; 
+  height: 40px; 
+  background-color: #f0f0f0;
+  border-radius: 20px; 
+  position: fixed;
+  left: 55px !important;
+  top : 10px;
+  overflow: hidden; 
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.lang-option {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  color: #555;
+  z-index: 10;
+  transition: color 0.3s ease;
+}
+
+.lang-option.active {
+  color: #fff; 
+}
+
+.lang-toggle-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+    background-color: rgb(173, 1, 24);
+  border-radius: 20px;
+  transition: transform 0.3s ease; 
+}
+
+.language-switcher.ar-active .lang-toggle-indicator {
+  transform: translateX(100%); /* تحريك المؤشر إلى اليمين بنسبة 100% */
+}
+/* End language-switcher */
+
+.menu-btn,
+.wrapper {
+    position: fixed;
+    transition: 0.2s ease-in-out
+}
+
+#active:checked~.menu-btn,
+.details,
+.menu-btn,
+#active:checked~.menu-btn i {
+    color: var(--light-color)
+}
+
+.details {
+    padding-right: 10px
+}
+
+.wrapper {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(0 0 0 / .5);
+    backdrop-filter: blur(7px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: circle(25px at calc(100% - 45px) 45px);
+    z-index: 100
+}
+
+#active:checked~.wrapper {
+    clip-path: circle(75%);
+    z-index: 100
+}
+
+.menu-btn {
+    top: 20px;
+    right: 20px;
+    z-index: 200;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    border: none;
+    background-color: var(--primary-color-alpha);
+    text-align: center
+}
+
+.fa-bars {
+    margin-top: 15px
+}
+
+#active:checked~.menu-btn i:before {
+    content: "\f00d"
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center
+}
+
+.wrapper ul {
+    text-align: center;
+    padding: 0
+}
+
+.wrapper li {
+    display: flex;
+    list-style: none;
+    margin: 9px auto
+}
+
+.link1 {
+    padding-bottom: 75px
+}
+
+.wrapper ul li a {
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 4px;
+    border-radius: 20px;
+    display: inline-block;
+    transition: 0.5s;
+    position: absolute;
+    font-size: 45px;
+    left: 50%;
+    transform: translate(-50%);
+    background: linear-gradient(to left, rgb(173, 1, 24), rgb(173, 1, 24), #fff);
+    background-clip: text;
+    -webkit-text-fill-color: #fff0
+}
+
+.wrapper ul li a:hover {
+    transform: scale(1.5);
+    opacity: 1;
+    color: var(--primary-color-alpha)
+}
+
+.wrapper ul:hover li a {
+    opacity: 0;
+    color: var(--primary-color-alpha)
+}
+
+.wrapper ul li::after {
+    content: attr(data-text);
+    -webkit-text-stroke: 1px var(--light-color);
+    color: #fff0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    font-weight: 900;
+    text-transform: uppercase;
+    opacity: 0;
+    pointer-events: none;
+    letter-spacing: 50px;
+    transition: 0.5s
+}
+
+.wrapper ul li:hover::after {
+    opacity: .5;
+    letter-spacing: 5px
+}
+
+input[type=checkbox] {
+    display: none
+}
+
+.cv {
+    width: 220px;
+    height: 46px;
+    background-color: var(--primary-color-alpha);
+    color: var(--light-color);
+    border-radius: 999px;
+    text-align: center;
+    font-weight: 700;
+    border: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 15px;
+    letter-spacing: 1px
+}
+
+.cv:hover {
+    background: #fff0;
+    border: none;
+    box-shadow: 0 0 20px var(--primary-color-alpha)
+}
+
+.fa-download {
+    padding: 9px;
+    background-color: rgb(173, 1, 24);
+    color: #fff;
+    backdrop-filter: blur(2px);
+    border-radius: 50%;
+    margin-left: 5px;
+    font-size: 13px;
+    font-family: "Font Awesome 6 Free"
+}
+
+.fa-php {
+    font-size: 60px
+}
+
+.about-separator {
+    width: 20%;
+    color: #fff
+}
+
+.section-title h2,
+.section-title p,
+.skills .progress .skill {
+font-family: "Cairo", Noto Kufi Arabic , sans-serif !important;
+    font-display: swap
+}
+
+.section-title h2 {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0;
+    line-height: 1px;
+    margin: 60px 0 20px;
+    letter-spacing: 2px;
+    color: #aaa
+}
+
+.section-title h2::after {
+    content: "";
+    width: 120px;
+    height: 1px;
+    display: inline-block;
+    background: var(--primary-color-alpha);
+    margin: 4px 10px
+}
+
+.section-title p {
+    margin: -15px 0 15px;
+    font-size: 36px;
+    font-weight: 700;
+    background: linear-gradient(to left, #5f5f5f, var(--light-color), var(--light-color));
+    background-clip: text;
+    -webkit-text-fill-color: #fff0
+}
+
+.content {
+    margin-top: 5px;
+        line-height: 30px;
+
+}
+
+.about-me .content h3 {
+    font-weight: 900;
+    font-size: 26px;
+    background: linear-gradient(to left, var(--primary-color-alpha), var(--light-color));
+    background-clip: text;
+    -webkit-text-fill-color: #fff0
+}
+
+.about-me .content ul {
+    list-style: none;
+    padding: 0
+}
+
+.about-me .content ul li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center
+}
+
+.about-me .content ul strong {
+    margin-right: 10px;
+    background: linear-gradient(to left, var(--primary-color-alpha), var(--light-color));
+    background-clip: text;
+    -webkit-text-fill-color: #fff0
+}
+
+.about-me .content ul i {
+    font-size: 16px;
+    margin-right: 5px;
+    color: var(--primary-color-alpha);
+    line-height: 0
+}
+
+.about-me .content p:last-child {
+    margin-bottom: 0
+}
+
+
+.skill-card {
+    border: 1px solid #ccc4;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px;
+    text-align: center;
+    background-color: rgba(252, 252, 252, 0.062);
+backdrop-filter: blur(70px);
+    box-shadow:inset 0 4px 8px rgb(0 0 0 / .1);
+    transition: transform var(--transition-speed) ease-in-out, box-shadow var(--transition-speed);
+    display: inline-block;
+        line-height: 35px;
+
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgb(0 0 0 / .2);
+    background-color: rgba(252, 252, 252, 0.034);
+backdrop-filter: blur(70px);
+box-shadow: none;
+}
+
+.skill-icon {
+    font-size: 48px;
+    background: linear-gradient(to left, var(--primary-color-alpha), var(--primary-color-alpha), var(--light-color));
+    background-clip: text;
+    -webkit-text-fill-color: #fff0;
+    margin-bottom: 10px
+}
+
+.skill-title {
+    font-size: 1.5em;
+    color: var(--light-color);
+    margin-bottom: 8px
+}
+
+.skill-description {
+    font-size: .9em;
+    color: var(--text-faint-color)
+}
+
+.work_experience {
+    position: relative;
+    margin-top: 10px;
+        line-height: 35px;
+
+}
+
+.work_experience::before {
+    position: absolute;
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: var(--primary-color-alpha)
+}
+
+.single_experience {
+    margin-top: 25px
+}
+
+.single_experience .experience_title {
+    width: 46%
+}
+
+.single_experience .experience_title h3 {
+    color: var(--light-color);
+    font-size: 25px;
+    font-weight: 600
+}
+
+.single_experience .experience_title p {
+    color: var(--primary-color-alpha);
+    font-size: 16px;
+    font-weight: 600;
+font-family: "Cairo", Noto Kufi Arabic , sans-serif !important;
+    margin-top: 10px
+}
+
+.single_experience .experience_title .date {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-faint-color);
+font-family: "Cairo", Noto Kufi Arabic , sans-serif !important;
+    margin-top: 10px
+}
+
+.single_experience .experience_number {
+    z-index: 2;
+    width: 8%;
+    text-align: center
+}
+
+.single_experience .experience_number span {
+    width: 55px;
+    height: 55px;
+    line-height: 51px;
+    text-align: center;
+    border: 2px solid var(--primary-color-alpha);
+    font-size: 20px;
+font-family: "Cairo", Noto Kufi Arabic , sans-serif !important;
+    color: var(--primary-color-alpha);
+    border-radius: 50%;
+    transition: all var(--transition-speed) ease-out;
+    background-color: var(--light-color)
+}
+
+.single_experience .experience_content {
+    padding: 30px;
+    border-radius: 8px;
+background-color: rgba(252, 252, 252, 0.062);
+backdrop-filter: blur(70px);
+    box-shadow:inset 0 4px 8px rgb(0 0 0 / .1);
+    color :#fff;
+    width: 46%;
+    transition: all var(--transition-speed) ease-out
+}
+
+.text-lg-right {
+    text-align: left
+}
+
+.exp-number {
+    padding: 5px 10px 
+}
+
+.single_experience:hover .experience_number span {
+    background-color: #b1031a;
+    color: var(--light-color)
+}
+
+.single_experience:hover .experience_content {
+background-color: rgba(252, 252, 252, 0.034);
+backdrop-filter: blur(70px);
+box-shadow: none;
+}
+
+.single_experience:hover .experience_content p,
+.single_experience:hover .experience_content li {
+color :#fff;
+}
+
+@keyframes rotate {
+    0% {
+        filter: hue-rotate(0deg)
+    }
+    100% {
+        filter: hue-rotate(360deg)
+    }
+}
+
+@keyframes wipe-enter {
+    0% {
+        transform: scale(0, .025)
+    }
+    50% {
+        transform: scale(1, .025)
+    }
+    
+}
+
+@media (max-width:991px) {
+    .work_experience::before {
+        display: none
+    }
+    .text-lg-right {
+        text-align: right
+    }
+    .single_experience .experience_title,
+    .single_experience .experience_content {
+        width: 100%
+    }
+    .single_experience .experience_content {
+        margin-top: 30px;
+        padding: 20px
+    }
+    .single_experience .experience_number {
+        display: none
+    }
+    .single_experience .experience_title .title {
+        font-size: 20px
+    }
+    .single_experience .experience_title p,
+    .single_experience .experience_title .date {
+        font-size: 15px
+    }
+}
+
+@media (max-width:750px) {
+    .wrapper ul {
+        position: absolute;
+        top: 180px
+    }
+    .cv {
+        position: absolute;
+        top: 450px;
+        margin-left: 5px
+    }
+    .wrapper {
+        padding-left: 10px
+    }
+    .language-switcher {
+  display: flex;
+  width: 120px; 
+  height: 40px; 
+  background-color: #f0f0f0;
+  border-radius: 20px; 
+  position: fixed;
+  left: 5px !important;
+  top : 7px;
+  overflow: hidden; 
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+
+}
