@@ -21,7 +21,7 @@ langSwitcher.querySelector('.lang-option[data-lang="AR"]').classList.add('active
 document.dir = "rtl";
 Home_Menu.setAttribute('data-text', 'الرئيسبة');
 About_Menu.setAttribute('data-text', 'عني');
-Portfolio_Menu.setAttribute('data-text', 'نماذج أعمالي');
+Portfolio_Menu.setAttribute('data-text', 'نماذج');
 langSwitcher.classList.remove('en-active'); 
  langSwitcher.classList.add('ar-active');
 
@@ -107,8 +107,7 @@ Download : "DOWNLOAD CV",
 
 Abdallah : "Abdallah",
 Fouad : "Fouad",
-Im : "I'm",
-a : " a",
+Im : "I'm a",
 Web_Developer : "Web Developer",
 With : " With ",
 Two : "Two",
@@ -116,11 +115,10 @@ Years : "Years",
 of : "of",
 Experience : "Experience",
 in : " in ",
-Creating : "Creating ",
-Dynamic : "Dynamic ",
+Building : "Building ",
 and : "and ",
-Maintainable : "Maintainable ",
-web_solutions : "web solutions.",
+Maintaining : "Maintaining ",
+websites : "Websites.",
 Portfolio_Btn : "Portfolio",
 About_Btn : "About Me",
 
@@ -151,16 +149,20 @@ Download : "تحميل السيرة الذاتية",
 
 Abdallah : "عبدالله",
 Fouad : "فؤاد",
-Im : "أنا",
-a : "أعمل",
+Im : "أعمل",
 Web_Developer : "كمطور ويب",
 With : "و",
 Two : "لدي",
 Years : "خبرة",
 of : "أكثر من ",
-Experience : "سنتين.",
+Experience : "سنتين",
+in : " في ",
+Building : "بناء ",
+and : "و ",
+Maintaining : "صيانة ",
+websites : "المواقع الإلكترونية.",
 Portfolio_Btn : "نماذج أعمالي",
-About_Btn : "من أنا",
+About_Btn : "المزيد عني",
 
 
 
