@@ -107,6 +107,7 @@ Download : "DOWNLOAD CV",
 
 Portfolio : "Portfolio",
 My_Works : "My Works",
+Live_Preview : "Live Preview",
 All : "All (32)",
 JavaScript : "JavaScript (6)",
 JQuery : "Jquery (3)",
@@ -118,6 +119,21 @@ Ajax : "Ajax (1)",
 Bootstrap : "Bootstrap (1)",
 Visual_Basic : "Visual Basic / C# (5)",
 Laravel : "Laravel (4)",
+
+
+
+JavaScript_Tag : "#JavaScript",
+JQuery_Tag : "#Jquery",
+PHP_Tag : "#PHP",
+SQL_Tag : "#SQL",
+OOP_Tag : "#OOP",
+API_Tag : "#API",
+Wordpress_Tag : "#Wordpress",
+Ajax_Tag : "#Ajax",
+Bootstrap_Tag : "#Bootstrap",
+Visual_Basic_Tag : "#Visual Basic",
+C_Tag : "C#",
+Laravel_Tag : "#Laravel",
 
 // Projects Titles and Data
 Project1 : "E-Commerce Website" ,
@@ -211,6 +227,7 @@ Download : "تحميل السيرة الذاتية",
 
 Portfolio : "نماذج",
 My_Works : "نماذج أعمالي",
+Live_Preview : "عرض المشروع",
 All : "جميع المشاريع (32)",
 JavaScript : "JavaScript (6)",
 JQuery : "Jquery (3)",
@@ -222,6 +239,23 @@ Ajax : "Ajax (1)",
 Bootstrap : "Bootstrap (1)",
 Visual_Basic : "Visual Basic / C# (5)",
 Laravel : "Laravel (4)",
+
+
+
+
+
+JavaScript_Tag : "#JavaScript",
+JQuery_Tag : "#Jquery",
+PHP_Tag : "#PHP",
+SQL_Tag : "#SQL",
+OOP_Tag : "#OOP",
+API_Tag : "#API",
+Wordpress_Tag : "#Wordpress",
+Ajax_Tag : "#Ajax",
+Bootstrap_Tag : "#Bootstrap",
+Visual_Basic_Tag : "#Visual Basic",
+C_Tag : "C#",
+Laravel_Tag : "#Laravel",
 
 // Projects Titles and Data
 Project1 : "موقع تجارة إلكترونية باستخدام Laravel" ,
