@@ -19,7 +19,7 @@ langOptions.forEach(option => option.classList.remove('active'));
 langSwitcher.querySelector('.lang-option[data-lang="AR"]').classList.add('active');
 
 document.dir = "rtl";
-Home_Menu.setAttribute('data-text', 'الرئيسبة');
+Home_Menu.setAttribute('data-text', 'الرئيسية');
 About_Menu.setAttribute('data-text', 'المزيد عني');
 Portfolio_Menu.setAttribute('data-text', 'نماذج أعمالي');
 langSwitcher.classList.remove('en-active'); 
