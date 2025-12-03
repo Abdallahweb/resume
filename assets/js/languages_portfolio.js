@@ -1,804 +1,328 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="description" content="Abdallah Fouad - Web Developer Resume, Portfolio.">
-<meta property="og:title" content="Abdallah Fouad - Resume">
-<meta property="og:type" content="website">
-<title data-lang ="Home_Page_title">Abdallah Fouad | Web Developer</title>
-<link rel="icon" href="assets/img/icon.jpg">
-
-
-<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet">
-
-<link href="assets/css/cursor.css" rel="stylesheet">
-<link href="assets/css/portfolio.css" id="theme"  rel="stylesheet">
-</head>
-
-<body>
-
-<div>
-
-<input id="active" type="checkbox">
-<label class="menu-btn" for="active"><i class="fas fa-bars"></i></label>
-
-<div class="wrapper">
-<section class="menu">
-<ul>
-<li class="link1" id="Home_Menu" ><a href="./index.html" class="link-menu" data-lang="Home_Menu">HOME</a></li>
-<li class="link1"  id="Portfolio_Menu" ><a href="./portfolio.html" class="link-menu" data-lang="Portfolio_Menu">PORTFOLIO</a></li>
-<li class="link1"  id="About_Menu"><a href="./about.html" class="link-menu" data-lang="About_Menu">ABOUT</a></li>
-
-</ul>
-<div>
-<a href="https://abdallahweb.github.io/resume/Abdallah%20Fouad%20CV.pdf">
-<button class="cv">
-<i class="fas fa-download"></i><span  data-lang="Download"> DOWNLOAD CV</span>
-</button>
-</a>
-</div>
-</section>
-</div>
+const langSwitcher = document.getElementById('lang-switcher');
+const langOptions = langSwitcher.querySelectorAll('.lang-option');
+  
 
-
-<div class="language-switcher" id="lang-switcher"   onclick="LanguagesFunction()" style="direction: ltr !important;">
-<span class="lang-option active" data-lang="EN">EN</span>
-<span class="lang-option" data-lang="AR">AR</span>
-<div class="lang-toggle-indicator"></div>
-</div>
+let theme = document.getElementById('theme');
+// let fontFamily = document.getElementById('fontFamily');
+// let fontFamily2 = document.getElementById('fontFamily2');
 
-<section class="portfolio" id="portfolio">
-<div class="container">
-<div class="section-title">
-<br>
-<h2 class="animate__animated animate__fadeIn" data-lang="Portfolio">Portfolio</h2>
-<p class="animate__animated animate__fadeIn" data-lang="My_Works">My Works</p>
-</div>
-
-<div class="row">
-<div class="col-lg-12 d-flex justify-content-center">
-<ul id="portfolio-flters">
-<li data-filter="*" class="filter-active" data-lang="All">All (32)</li>
-<li data-filter=".filter-web" data-lang="Wordpress">Wordpress (4)</li>
-<li data-filter=".filter-laravel" data-lang="Laravel">Laravel (4)</li>
-<li data-filter=".filter-php" data-lang="PHP">PHP (4)</li>
-<li data-filter=".filter-ajax" data-lang="Ajax">Ajax (1)</li>
-<li data-filter=".filter-java" data-lang="JavaScript">JavaScript (6)</li>
-<li data-filter=".filter-jquery" data-lang="JQuery">JQuery (3)</li>
-<li data-filter=".filter-api" data-lang="API">API (2)</li>
-<li data-filter=".filter-oop" data-lang="OOP">OOP (2)</li>
-<li data-filter=".filter-bootstrap" data-lang="Bootstrap">Bootstrap (1)</li>
-<li data-filter=".filter-visualbasic" data-lang="Visual_Basic">Visual Basic / C# (5)</li>
-</ul>
-</div>
-</div>
+let Home_Menu =  document.getElementById('Home_Menu');
+let About_Menu =  document.getElementById('About_Menu');
+let Portfolio_Menu =  document.getElementById('Portfolio_Menu');
 
-<div class="row portfolio-container">
 
+function ArabicLanguages(){
 
-<div class="col-lg-4 col-md-6 portfolio-item filter-laravel">
-<div class="project-card">
-<img src="assets/img/portfolio/Ecommerce.webp" alt="Project">
+theme.setAttribute('href', 'assets/css/portfolio_ar.css');
+localStorage.setItem("lang" , "arabic" );
+langOptions.forEach(option => option.classList.remove('active'));
+langSwitcher.querySelector('.lang-option[data-lang="AR"]').classList.add('active');
 
-<div class="project-details">
-<h4  data-lang="Project1">E-Commerce Website</h4>
-<p  data-lang="Project1_Data">E-Commerce Project Using Laravel</p>
+document.dir = "rtl";
+Home_Menu.setAttribute('data-text', 'الرئيسية');
+About_Menu.setAttribute('data-text', 'المزيد عني');
+Portfolio_Menu.setAttribute('data-text', 'نماذج أعمالي');
+langSwitcher.classList.remove('en-active'); 
+ langSwitcher.classList.add('ar-active');
 
+const elements = document.querySelectorAll("[data-lang]");
+elements.forEach((element) => {
+const translationsKey = element.getAttribute("data-lang");
+element.textContent = translations['Arabic'][translationsKey]
+});
 
-<div class="tags">
-<span  data-lang="Laravel_Tag">#Laravel</span>
-     <span  data-lang="SQL_Tag">#SQL</span>
-<span  data-lang="Bootstrap_Tag">#Bootstrap</span>
+}
 
-</div>
+function EnglishLanguages(){
+theme.setAttribute('href', 'assets/css/portfolio.css');
+// fontFamily.setAttribute('href', '');
+// fontFamily2.setAttribute('href', '');
+ langSwitcher.classList.remove('ar-active');
+langSwitcher.classList.add('en-active'); 
+langOptions.forEach(option => option.classList.remove('active'));
+langSwitcher.querySelector('.lang-option[data-lang="EN"]').classList.add('active');
 
-<div class="project-actions">
-<a href="https://ecomlaravel.42web.io/" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
+document.dir = "ltr";
+Home_Menu.setAttribute('data-text', 'HOME');
+About_Menu.setAttribute('data-text', 'ABOUT');
+Portfolio_Menu.setAttribute('data-text', 'PORTFOLIO');
 
+const elements = document.querySelectorAll("[data-lang]");
+elements.forEach((element) => {
+const translationsKey = element.getAttribute("data-lang");
+element.textContent = translations['English'][translationsKey]
+});
 
 
+}
 
-<div class="col-lg-4 col-md-6 portfolio-item filter-laravel">
-<div class="project-card">
-<img src="assets/img/portfolio/MultiStore.webp" alt="Project">
 
-<div class="project-details">
-<h4 data-lang="Project2">Multi Store Project</h4>
-<p data-lang="Project2_Data">Multi Store Project Using Laravel</p>
-
-
-<div class="tags">
-<span  data-lang="Laravel_Tag">#Laravel</span>
-     <span  data-lang="SQL_Tag">#SQL</span>
-<span  data-lang="Bootstrap_Tag">#Bootstrap</span>
-<span  data-lang="Ajax_Tag">#Ajax</span>
-
-
-</div>
-
-<div class="project-actions">
-<a href="https://storelaravel.infinityfreeapp.com/view_stores?i=1" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-
-
-
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-web">
-<div class="project-card">
-<img src="assets/img/portfolio/VrealTour.webp" alt="Project">
-
-<div class="project-details">
-<h4 data-lang="Project3">VReal Tour</h4>
-<p data-lang="Project3_Data">Website For VR Services Using Wordpress</p>
-
-
-<div class="tags">
-    <span  data-lang="Wordpress_Tag">#Wordpress</span>
-    <span  data-lang="PHP_Tag">#PHP</span>
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
-</div>
-
-<div class="project-actions">
-<a href="https://vrealtour.com/" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-
-
-
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-web">
-<div class="project-card">
-<img src="assets/img/portfolio/VrealCar.webp" alt="Project">
-
-<div class="project-details">
-<h4 data-lang="Project4">VReal Car</h4>
-<p data-lang="Project4_Data">Website For Cars Services Using Wordpress</p>
-
-
-<div class="tags">
-        <span  data-lang="Wordpress_Tag">#Wordpress</span>
-    <span  data-lang="PHP_Tag">#PHP</span>
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
-</div>
-
-<div class="project-actions">
-<a href="https://vrealcar.com/" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-
-
-
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-web">
-<div class="project-card">
-<img src="assets/img/portfolio/Rrstate.webp" alt="Project">
-
-<div class="project-details">
-<h4 data-lang="Project5">Rrstate</h4>
-<p data-lang="Project5_Data">Website For Real Estate Services Using Wordpress</p>
-
-
-<div class="tags">
-    <span  data-lang="Wordpress_Tag">#Wordpress</span>
-    <span  data-lang="PHP_Tag">#PHP</span>
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
-</div>
-
-<div class="project-actions">
-<a href="https://rrstate.com/" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-
-
-
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-php">
-<div class="project-card">
-<img src="assets/img/portfolio/cibs.webp" alt="Project">
-
-<div class="project-details">
-<h4 data-lang="Project6">Cibs Soft</h4>
-<p data-lang="Project6_Data">Website For Software Services Using PHP</p>
-
-
-<div class="tags">
-    <span  data-lang="PHP_Tag">#PHP</span>
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
-    <span  data-lang="Ajax_Tag">#Ajax</span>
-
-</div>
-
-<div class="project-actions">
-<a href="https://cibssoft.com/" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-
-
-
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-web">
-<div class="project-card">
-<img src="assets/img/portfolio/EngineeringHouse.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project7">Engineering House</h4>
-<p data-lang="Project7_Data">Website For Engineering Services Using Wordpress</p>
-<div class="tags">
-   <span  data-lang="Wordpress_Tag">#Wordpress</span>
-    <span  data-lang="PHP_Tag">#PHP</span>
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
-</div>
-<div class="project-actions">
-<a href="#" target="" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-
-
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-php">
-<div class="project-card">
-<img src="assets/img/portfolio/ChatApp.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project8">Chat App Using Php</h4>
-<p data-lang="Project8_Data">Chat App Using Php</p>
-<div class="tags">
- <span  data-lang="PHP_Tag">#PHP</span>
-       <span  data-lang="SQL_Tag">#SQL</span>
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
-</div>
-<div class="project-actions">
-<a href="https://chatappphp.42web.io/index.php" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-
-
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-php">
-<div class="project-card">
-<img src="assets/img/portfolio/CrudPhp.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project9">Crud Project Using Php</h4>
-<p data-lang="Project9_Data">Crud Project Using Php</p>
-<div class="tags">
- <span  data-lang="PHP_Tag">#PHP</span>
-      <span  data-lang="SQL_Tag">#SQL</span>
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
-</div>
-<div class="project-actions">
-<a href="https://abdallah.42web.io/index.php" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-php">
-<div class="project-card">
-<img src="assets/img/portfolio/EcommercePhp.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project10">E-commerce Project</h4>
-<p data-lang="Project10_Data">E-commerce Project Using PHP</p>
-<div class="tags">
- <span  data-lang="PHP_Tag">#PHP</span>
-     <span  data-lang="SQL_Tag">#SQL</span>
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
-</div>
-<div class="project-actions">
-<a href="#" target="" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-java">
-<div class="project-card">
-<img src="assets/img/portfolio/X-O Game.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project11">Game Project</h4>
-<p data-lang="Project11_Data">X - O Game Using Javascript</p>
-<div class="tags">
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
-</div>
-<div class="project-actions">
-<a href="https://abdallahweb.github.io/Game-X-O/" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-
-
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-java">
-<div class="project-card">
-<img src="assets/img/portfolio/Squid.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project12">Game Project</h4>
-<p data-lang="Project12_Data">Squid Game Using Javascript</p>
-<div class="tags">
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
-</div>
-<div class="project-actions">
-<a href="https://abdallahweb.github.io/Squid/" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-java">
-<div class="project-card">
-<img src="assets/img/portfolio/alarm.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project13">Alarm Project</h4>
-<p data-lang="Project13_Data">Alarm Project Using Javascript</p>
-<div class="tags">
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
-</div>
-<div class="project-actions">
-<a href="https://abdallahweb.github.io/Alarm" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-java">
-<div class="project-card">
-<img src="assets/img/portfolio/CrudJavaScript.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project14_Data">Crud Project</h4>
-<p data-lang="Project14_Data">Crud Project Using Javascript</p>
-<div class="tags">
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
-    <span  data-lang="Ajax_Tag">#Ajax</span>
-</div>
-<div class="project-actions">
-<a href="https://abdallahweb.github.io/Crud/" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-java">
-<div class="project-card">
-<img src="assets/img/portfolio/PhotoFilter.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project15">Photo Filter Project</h4>
-<p data-lang="Project15_Data">Photo Filter Using Javascript</p>
-<div class="tags">
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
-</div>
-<div class="project-actions">
-<a href="https://abdallahweb.github.io/Filter/" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-java">
-<div class="project-card">
-<img src="assets/img/portfolio/Javascript.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project16">VR Project</h4>
-<p data-lang="Project16_Data">VR Project Using Javascript</p>
-<div class="tags">
- <span  data-lang="Wordpress_Tag">#PHP</span>
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
-</div>
-<div class="project-actions">
-<a href="https://vrealtour.com/plan" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-jquery">
-<div class="project-card">
-<img src="assets/img/portfolio/hunter.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project17">Game Project</h4>
-<p data-lang="Project17_Data">Game Project Using Jquery</p>
-<div class="tags">
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
- <span  data-lang="JQuery_Tag">#JQuery</span>
-
-
-</div>
-<div class="project-actions">
-<a href="https://abdallahweb.github.io/hunter" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-jquery">
-<div class="project-card">
-<img src="assets/img/portfolio/sebha.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project18">Sebha Project</h4>
-<p data-lang="Project18_Data">Sebha Using Jquery</p>
-<div class="tags">
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
- <span  data-lang="JQuery_Tag">#JQuery</span>
-
-</div>
-<div class="project-actions">
-<a href="https://abdallahweb.github.io/Sebha" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-jquery">
-<div class="project-card">
-<img src="assets/img/portfolio/motor.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project19">Game Project</h4>
-<p data-lang="Project19_Data">Game Using Jquery</p>
-<div class="tags">
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
- <span  data-lang="JQuery_Tag">#JQuery</span>
-
-</div>
-<div class="project-actions">
-<a href="https://abdallahweb.github.io/Motorcycle_Game/" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-oop">
-<div class="project-card">
-<img src="assets/img/portfolio/Boxing.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project20">OOP Project</h4>
-<p data-lang="Project20_Data">Boxing Game Using OOP</p>
-<div class="tags">
-     <span  data-lang="OOP_Tag">#OOP</span>
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
- <span  data-lang="JQuery_Tag">#JQuery</span>
-
-</div>
-<div class="project-actions">
-<a href="https://abdallahweb.github.io/Boxing/" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-oop">
-<div class="project-card">
-<img src="assets/img/portfolio/Snake.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project21">OOP Project</h4>
-<p data-lang="Project21_Data">Snake Game Using OOP</p>
-<div class="tags">
-     <span  data-lang="OOP_Tag">#OOP</span>
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
- <span  data-lang="JQuery_Tag">#JQuery</span>
-</div>
-<div class="project-actions">
-<a href="https://abdallahweb.github.io/Snake/" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-ajax">
-<div class="project-card">
-<img src="assets/img/portfolio/Ajax.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project22">Ajax Project Using PHP</h4>
-<p data-lang="Project22_Data">Crud And Search Using Ajax</p>
-<div class="tags">
-     <span  data-lang="PHP_Tag">#PHP</span>
-      <span  data-lang="SQL_Tag">#SQL</span>
-<span  data-lang="Ajax_Tag">#Ajax</span>
-</div>
-<div class="project-actions">
-<a href="https://crudajax.infinityfreeapp.com/?i=1" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-api">
-<div class="project-card">
-<img src="assets/img/portfolio/adan-api.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project23">API Project</h4>
-<p data-lang="Project23_Data">Prayer Timings Using API</p>
-<div class="tags">
-     <span  data-lang="API_Tag">#API</span>
-      <span  data-lang="JavaScript_Tag">#JavaScript</span>
-
-</div>
-<div class="project-actions">
-<a href="https://abdallahweb.github.io/Adan-Api/" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-api">
-<div class="project-card">
-<img src="assets/img/portfolio/api.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project24">API Project</h4>
-<p data-lang="Project24_Data">Country Details Using API</p>
-<div class="tags">
-     <span  data-lang="API_Tag">#API</span>
-      <span  data-lang="JavaScript_Tag">#JavaScript</span>
-</div>
-<div class="project-actions">
-<a href="https://abdallahweb.github.io/Country-Api/" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-laravel">
-<div class="project-card">
-<img src="assets/img/portfolio/school.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project25">School System</h4>
-<p data-lang="Project25_Data">School System Using Laravel</p>
-<div class="tags">
-<span  data-lang="Laravel_Tag">#Laravel</span>
-     <span  data-lang="SQL_Tag">#SQL</span>
-<span  data-lang="Bootstrap_Tag">#Bootstrap</span>
-    </div>
-<div class="project-actions">
-<a href="#" target="" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-laravel">
-<div class="project-card">
-<img src="assets/img/portfolio/laravel.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project26">Jobs Project</h4>
-<p data-lang="Project26_Data">Jobs Project Using Laravel</p>
-<div class="tags">
-<span  data-lang="Laravel_Tag">#Laravel</span>
-     <span  data-lang="SQL_Tag">#SQL</span>
-<span  data-lang="Bootstrap_Tag">#Bootstrap</span>
-</div>
-<div class="project-actions">
-<a href="#" target="" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-visualbasic">
-<div class="project-card">
-<img src="assets/img/portfolio/store.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project27">Store Program</h4>
-<p data-lang="Project27_Data">Store Program Using C#</p>
-<div class="tags">
-<span  data-lang="C_Tag">#C#</span>
-</div>
-<div class="project-actions">
-<a href="#" target="" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-visualbasic">
-<div class="project-card">
-<img src="assets/img/portfolio/voicer.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project28">Speaker Program</h4>
-<p data-lang="Project28_Data">Speaker Program Using Visual Basic</p>
-<div class="tags">
-<span  data-lang="Visual_Basic_Tag">#Visual Basic</span>
-
-</div>
-<div class="project-actions">
-<a href="#" target="" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-visualbasic">
-<div class="project-card">
-<img src="assets/img/portfolio/screen.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project29">Screen Shot Program</h4>
-<p data-lang="Project29_Data">Screen Shot Program Using Visual Basic</p>
-<div class="tags">
-<span  data-lang="Visual_Basic_Tag">#Visual Basic</span>
-
-</div>
-<div class="project-actions">
-<a href="#" target="" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-visualbasic">
-<div class="project-card">
-<img src="assets/img/portfolio/library.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project30">Library Program</h4>
-<p data-lang="Project30_Data">Library Program Using C#</p>
-<div class="tags">
-<span  data-lang="C_Tag">#C</span>
-</div>
-<div class="project-actions">
-<a href="#" target="" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-visualbasic">
-<div class="project-card">
-<img src="assets/img/portfolio/vaction.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project31">Vacation Program</h4>
-<p data-lang="Project31_Data">Vacation Program Using C#</p>
-<div class="tags">
-<span  data-lang="C_Tag">#C</span>
-</div>
-<div class="project-actions">
-<a href="#" target="" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-bootstrap">
-<div class="project-card">
-<img src="assets/img/portfolio/MedicalWebsite.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project32">Bootstrap Project</h4>
-<p data-lang="Project32_Data">Medical Website Using Bootstrap</p>
-<div class="tags">
-<span  data-lang="Bootstrap_Tag">#Bootstrap</span>
-</div>
-<div class="project-actions">
-<a href="https://abdallahweb.github.io/Medical/" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-
-</div>
-</div>
-</div>
-</div>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/query.js"></script>
-<script src="assets/js/cursor.js"></script>
-<script src="assets/js/script.js"></script>
-<script src="assets/js/languages_portfolio.js"></script>
-
-</body>
-
-</html>
-
-
+  function LanguagesFunction(){
+if(localStorage.getItem("lang") == 'arabic'){
+localStorage.setItem("lang" , "english" );
+EnglishLanguages()
+
+}else{
+localStorage.setItem("lang" , "arabic" );
+ArabicLanguages()
+}
+}
+
+
+window.addEventListener('load', function() {
+if(localStorage.getItem("lang") == 'arabic'){
+ArabicLanguages();
+
+}else{
+EnglishLanguages();
+
+}});
+
+
+
+
+
+
+
+
+const translations ={
+English :{ 
+
+// Pages Title
+
+Home_Page_title : "Abdallah Fouad | Web Developer",
+
+
+
+// Menu
+
+EN : "EN",
+AR : "AR",
+Home_Menu : "HOME",
+Portfolio_Menu : "PORTFOLIO",
+About_Menu : "ABOUT",
+Download : "DOWNLOAD CV",
+
+// Portfolio Page
+
+Portfolio : "Portfolio",
+My_Works : "My Works",
+Live_Preview : "Live Preview",
+All : "All (32)",
+JavaScript : "JavaScript (6)",
+JQuery : "JQuery (3)",
+PHP : "PHP (4)",
+OOP : "OOP (2)",
+API : "API (2)",
+Wordpress : "Wordpress (4)",
+Ajax : "Ajax (1)",
+Bootstrap : "Bootstrap (1)",
+Visual_Basic : "Visual Basic / C# (5)",
+Laravel : "Laravel (4)",
+
+
+
+JavaScript_Tag : "#JavaScript",
+JQuery_Tag : "#JQuery",
+PHP_Tag : "#PHP",
+SQL_Tag : "#SQL",
+OOP_Tag : "#OOP",
+API_Tag : "#API",
+Wordpress_Tag : "#Wordpress",
+Ajax_Tag : "#Ajax",
+Bootstrap_Tag : "#Bootstrap",
+Visual_Basic_Tag : "#Visual Basic",
+C_Tag : "C#",
+Laravel_Tag : "#Laravel",
+
+// Projects Titles and Data
+Project1 : "E-Commerce Website" ,
+Project1_Data : "E-Commerce Project Using Laravel", 
+Project2 : "Multi Store Project" ,
+Project2_Data : "Multi Store Project Using Laravel", 
+Project3 : "VReal Tour" ,
+Project3_Data : "Website For VR Services Using Wordpress", 
+Project4 : "VReal Car" ,
+Project4_Data : "Website For Cars Services Using Wordpress", 
+Project5 : "Rrstate" ,
+Project5_Data : "Website For Real Estate Services Using Wordpress", 
+Project6 : "Cibs Soft" ,
+Project6_Data : "Website For Software Services Using PHP", 
+Project7 : "Engineering House" ,
+Project7_Data : "Website For Engineering Services Using Wordpress", 
+Project8 : "Chat App Using Php" ,
+Project8_Data : "Chat App Using Php", 
+Project9 : "Crud Project Using Php" ,
+Project9_Data : "Crud Project Using Php", 
+Project10 : "E-commerce Project" ,
+Project10_Data : "E-commerce Project Using PHP", 
+Project11 : "Game Project" ,
+Project11_Data : "X - O Game Using Javascript", 
+Project12 : "Game Project" ,
+Project12_Data : "Squid Game Using Javascript", 
+Project13 : "Alarm Project" ,
+Project13_Data : "Alarm Project Using JavaScript", 
+Project14 : "Crud Project" ,
+Project14_Data : "Crud Project Using JavaScript", 
+Project15 : "Photo Filter Project" ,
+Project15_Data : "Photo Filter Using Javascript", 
+Project16 : "VR Project" ,
+Project16_Data : "VR Project Using Javascript", 
+Project17 : "Game Project" ,
+Project17_Data : "Game Project Using JQuery", 
+Project18 : "Sebha Project" ,
+Project18_Data : "Sebha Using JQuery", 
+Project19 : "Game Project" ,
+Project19_Data : "Game Using JQuery", 
+Project20 : "OOP Project" ,
+Project20_Data : "Boxing Game Using OOP", 
+Project21 : "OOP Project" ,
+Project21_Data : "Snake Game Using OOP", 
+Project22 : "Ajax Project Using PHP" ,
+Project22_Data : "Crud And Search Using Ajax", 
+Project23 : "API Project" ,
+Project23_Data : "Prayer Timings Using API", 
+Project24 : "API Project" ,
+Project24_Data : "Country Details Using API", 
+Project25 : "School System" ,
+Project25_Data : "School System Using Laravel", 
+Project26 : "Jobs Website Project" ,
+Project26_Data : "Jobs Website Project Using Laravel", 
+Project27 : "Store Program" ,
+Project27_Data : "Store Program Using C#", 
+Project28 : "Speaker Program" ,
+Project28_Data : "Speaker Program Using Visual Basic", 
+Project29 : "Screen Shot Program" ,
+Project29_Data : "Screen Shot Program Using Visual Basic", 
+Project30 : "Library Program" ,
+Project30_Data : "Library Program Using C#", 
+Project31 : "Vacation Program" ,
+Project31_Data : "Vacation Program Using C#", 
+Project32 : "Bootstrap Project" ,
+Project32_Data : "Medical Website Using Bootstrap", 
+
+},
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Arabic : {   
+
+// Pages Title
+
+Home_Page_title : "عبدالله فؤاد | مطور ويب",
+
+
+
+// Menu
+
+EN : "EN",
+AR : "AR",
+Home_Menu : "الرئيسية",
+Portfolio_Menu : "نماذج أعمالي",
+About_Menu : "المزيد عني",
+Download : "تحميل السيرة الذاتية",
+
+// Portfolio Page
+
+Portfolio : "نماذج",
+My_Works : "نماذج أعمالي",
+Live_Preview : "عرض المشروع",
+All : "جميع النماذج (32)",
+JavaScript : "JavaScript (6)",
+JQuery : "JQuery (3)",
+PHP : "PHP (4)",
+OOP : "OOP (2)",
+API : "API (2)",
+Wordpress : "Wordpress (4)",
+Ajax : "Ajax (1)",
+Bootstrap : "Bootstrap (1)",
+Visual_Basic : "Visual Basic / C# (5)",
+Laravel : "Laravel (4)",
+
+
+
+
+
+JavaScript_Tag : "JavaScript#",
+JQuery_Tag : "JQuery#",
+PHP_Tag : "PHP#",
+SQL_Tag : "SQL#",
+OOP_Tag : "OOP#",
+API_Tag : "API#",
+Wordpress_Tag : "Wordpress#",
+Ajax_Tag : "Ajax#",
+Bootstrap_Tag : "Bootstrap#",
+Visual_Basic_Tag : "Visual Basic#",
+C_Tag : "#C",
+Laravel_Tag : "Laravel#",
+
+// Projects Titles and Data
+Project1 : "موقع تجارة إلكترونية بإستخدام Laravel" ,
+Project1_Data : "مشروع تجارة إلكترونية بإستخدام Laravel", 
+Project2 : "مشروع متاجر متعددة" ,
+Project2_Data : "مشروع متاجر متعددة بإستخدام Laravel", 
+Project3 : "VReal Tour" ,
+Project3_Data : "موقع إلكتروني لخدمات الواقع الافتراضي بإستخدام Wordpress", 
+Project4 : "VReal Car" ,
+Project4_Data : "موقع إلكتروني لخدمات السيارات بإستخدام Wordpress", 
+Project5 : "Rrstate" ,
+Project5_Data : "موقع إلكتروني لخدمات العقارات بإستخدام Wordpress", 
+Project6 : "Cibs Soft" ,
+Project6_Data : "موقع إلكتروني لخدمات البرمجيات بإستخدام PHP", 
+Project7 : "Engineering House" ,
+Project7_Data : "موقع إلكتروني لخدمات هندسية بإستخدام Wordpress", 
+Project8 : "تطبيق دردشة بإستخدام PHP" ,
+Project8_Data : "تطبيق دردشة بإستخدام PHP", 
+Project9 : "مشروع Crud بإستخدام PHP" ,
+Project9_Data : "مشروع Crud بإستخدام PHP", 
+Project10 : "مشروع تجارة إلكترونية" ,
+Project10_Data : "مشروع تجارة إلكترونية بإستخدام PHP", 
+Project11 : "مشروع لعبة" ,
+Project11_Data : "لعبة X - O بإستخدام Javascript", 
+Project12 : "مشروع لعبة" ,
+Project12_Data : "لعبة Squid Game بإستخدام Javascript", 
+Project13 : "مشروع منبه" ,
+Project13_Data : "مشروع منبه بإستخدام JavaScript", 
+Project14 : "مشروع Crud" ,
+Project14_Data : "مشروع Crud بإستخدام JavaScript", 
+Project15 : "مشروع فلاتر صور" ,
+Project15_Data : "فلتر صور بإستخدام Javascript", 
+Project16 : "مشروع واقع افتراضي" ,
+Project16_Data : "مشروع واقع افتراضي بإستخدام Javascript", 
+Project17 : "مشروع لعبة" ,
+Project17_Data : "مشروع لعبة بإستخدام JQuery", 
+Project18 : "مشروع سبحة" ,
+Project18_Data : "مشروع سبحة بإستخدام JQuery", 
+Project19 : "مشروع لعبة" ,
+Project19_Data : "مشروع لعبة بإستخدام JQuery", 
+Project20 : "مشروع البرمجة الشيئية (OOP)" ,
+Project20_Data : "لعبة Boxing بإستخدام OOP", 
+Project21 : "مشروع البرمجة الشيئية (OOP)" ,
+Project21_Data : "لعبة الثعبان (Snake Game) بإستخدام OOP", 
+Project22 : "مشروع Ajax بإستخدام PHP" ,
+Project22_Data : "Crud وبحث بإستخدام Ajax", 
+Project23 : "مشروع واجهة برمجية (API)" ,
+Project23_Data : "مواقيت الصلاة بإستخدام API", 
+Project24 : "مشروع واجهة برمجية (API)" ,
+Project24_Data : "تفاصيل الدول بإستخدام API", 
+Project25 : "نظام مدرسة" ,
+Project25_Data : "نظام مدرسة بإستخدام Laravel", 
+Project26 : "مشروع موقع وظائف" ,
+Project26_Data : "مشروع موقع وظائف بإستخدام Laravel", 
+Project27 : "برنامج متجر" ,
+Project27_Data : "برنامج متجر بإستخدام #C", 
+Project28 : "برنامج ناطق الأصوات (Speaker)" ,
+Project28_Data : "برنامج ناطق الأصوات بإستخدام Visual Basic", 
+Project29 : "برنامج لقطة الشاشة" ,
+Project29_Data : "برنامج لقطة شاشة بإستخدام Visual Basic", 
+Project30 : "برنامج مكتبة" ,
+Project30_Data : "برنامج مكتبة بإستخدام #C", 
+Project31 : "برنامج اجازات" ,
+Project31_Data : "برنامج اجازات بإستخدام #C", 
+Project32 : "مشروع Bootstrap" ,
+Project32_Data : "موقع طبي بإستخدام Bootstrap", 
+
+
+},
+};
