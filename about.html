@@ -29,8 +29,37 @@
 <link href="assets/css/about.css"  id="theme" rel="stylesheet">
 </head>
 
-<body>
-<div>
+
+<style>
+#loader {
+text-align: center;
+}
+
+.imgLoader{
+position: absolute;
+border-radius: 30px;
+width: 350px;
+height: 350px;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+
+}
+
+#myDiv {
+display: none;
+}
+</style>
+</head>
+<body onload="myFunction()">
+
+<div  id="loader">
+<img class="img-fluid imgLoader" src="./assets/img/icon.jpg">
+</div>
+
+
+
+<div  style="display:none;" id="myDiv">
 
 <input id="active" type="checkbox">
 <label class="menu-btn" for="active"><i class="fas fa-bars"></i></label>
@@ -227,7 +256,7 @@ Web Developer with a strong passion for detail and clean architecture, specializ
 </ol>
 
 
-    </div>
+</div>
 </div>
 </div>
 </div>
@@ -273,6 +302,21 @@ Web Developer with a strong passion for detail and clean architecture, specializ
 <script src="assets/js/cursor.js"></script>
 <script src="assets/js/script.js"></script>
 <script src="assets/js/languages_about.js"></script>
+
+<script>
+
+var myVar;
+
+function myFunction() {
+myVar = setTimeout(showPage, 1000);
+}
+
+function showPage() {
+document.getElementById("loader").style.display = "none";
+document.getElementById("myDiv").style.display = "block";
+$( ".filter-active" ).trigger( "click" );
+}
+</script>
 
 </body>
 
