@@ -24,11 +24,40 @@
 
 <link href="assets/css/cursor.css" rel="stylesheet">
 <link href="assets/css/portfolio.css" id="theme"  rel="stylesheet">
+
+
+<style>
+#loader {
+text-align: center;
+}
+
+.imgLoader{
+position: absolute;
+border-radius: 30px;
+width: 350px;
+height: 350px;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+#loadingDiv {
+display: none;
+}
+
+</style>
 </head>
 
-<body>
+<body onload="loadingFunction()">
 
-<div>
+<div  id="loader">
+<img class="img-fluid imgLoader" src="./assets/img/icon.jpg">
+</div>
+
+
+
+<div  style="display:none;" id="loadingDiv">
+
 
 <input id="active" type="checkbox">
 <label class="menu-btn" for="active"><i class="fas fa-bars"></i></label>
@@ -94,8 +123,8 @@
 <h4 data-lang="Project33">Quran App Using API</h4>
 <p data-lang="Project33_Data">A web-based Quran app enabling users to listen to recitations, access Tafsir, and stream live Quran radio.</p>
 <div class="tags">
-     <span  data-lang="API_Tag">#API</span>
-      <span  data-lang="JavaScript_Tag">#JavaScript</span>
+<span  data-lang="API_Tag">#API</span>
+<span  data-lang="JavaScript_Tag">#JavaScript</span>
 
 </div>
 <div class="project-actions">
@@ -119,8 +148,8 @@ Live Preview
 
 
 <div class="tags">
-    <span  data-lang="WordPress_Tag">#WordPress</span>
-    <span  data-lang="PHP_Tag">#PHP</span>
+<span  data-lang="WordPress_Tag">#WordPress</span>
+<span  data-lang="PHP_Tag">#PHP</span>
 <span  data-lang="JavaScript_Tag">#JavaScript</span>
 </div>
 
@@ -147,8 +176,8 @@ Live Preview
 
 
 <div class="tags">
-        <span  data-lang="WordPress_Tag">#WordPress</span>
-    <span  data-lang="PHP_Tag">#PHP</span>
+<span  data-lang="WordPress_Tag">#WordPress</span>
+<span  data-lang="PHP_Tag">#PHP</span>
 <span  data-lang="JavaScript_Tag">#JavaScript</span>
 </div>
 
@@ -174,7 +203,7 @@ Live Preview
 
 <div class="tags">
 <span  data-lang="Laravel_Tag">#Laravel</span>
-     <span  data-lang="SQL_Tag">#SQL</span>
+<span  data-lang="SQL_Tag">#SQL</span>
 <span  data-lang="Bootstrap_Tag">#Bootstrap</span>
 
 </div>
@@ -202,7 +231,7 @@ Live Preview
 
 <div class="tags">
 <span  data-lang="Laravel_Tag">#Laravel</span>
-     <span  data-lang="SQL_Tag">#SQL</span>
+<span  data-lang="SQL_Tag">#SQL</span>
 <span  data-lang="Bootstrap_Tag">#Bootstrap</span>
 <span  data-lang="AJAX_Tag">#AJAX</span>
 
@@ -227,10 +256,10 @@ Live Preview
 <h4 data-lang="Project8">PHP Chat Application</h4>
 <p data-lang="Project8_Data">A PHP chat app demonstrating backend logic, database interaction, and AJAX-based real-time messaging between users.</p>
 <div class="tags">
- <span  data-lang="PHP_Tag">#PHP</span>
-       <span  data-lang="SQL_Tag">#SQL</span>
+<span  data-lang="PHP_Tag">#PHP</span>
+<span  data-lang="SQL_Tag">#SQL</span>
 <span  data-lang="JavaScript_Tag">#JavaScript</span>
-     <span  data-lang="AJAX_Tag">#AJAX</span>
+<span  data-lang="AJAX_Tag">#AJAX</span>
 
 </div>
 <div class="project-actions">
@@ -256,8 +285,8 @@ Live Preview
 
 
 <div class="tags">
-    <span  data-lang="WordPress_Tag">#WordPress</span>
-    <span  data-lang="PHP_Tag">#PHP</span>
+<span  data-lang="WordPress_Tag">#WordPress</span>
+<span  data-lang="PHP_Tag">#PHP</span>
 <span  data-lang="JavaScript_Tag">#JavaScript</span>
 </div>
 
@@ -284,9 +313,9 @@ Live Preview
 
 
 <div class="tags">
-    <span  data-lang="PHP_Tag">#PHP</span>
+<span  data-lang="PHP_Tag">#PHP</span>
 <span  data-lang="JavaScript_Tag">#JavaScript</span>
-    <span  data-lang="AJAX_Tag">#AJAX</span>
+<span  data-lang="AJAX_Tag">#AJAX</span>
 
 </div>
 
@@ -310,8 +339,8 @@ Live Preview
 <h4 data-lang="Project7">Engineering Company Website</h4>
 <p data-lang="Project7_Data">A professional engineering website showcasing services and projects with modern responsive design, highlighting expertise and user-friendly experience.</p>
 <div class="tags">
-   <span  data-lang="WordPress_Tag">#WordPress</span>
-    <span  data-lang="PHP_Tag">#PHP</span>
+<span  data-lang="WordPress_Tag">#WordPress</span>
+<span  data-lang="PHP_Tag">#PHP</span>
 <span  data-lang="JavaScript_Tag">#JavaScript</span>
 </div>
 <div class="project-actions">
@@ -336,8 +365,8 @@ Live Preview
 <h4 data-lang="Project9">CRUD Management System</h4>
 <p data-lang="Project9_Data">A full PHP CRUD system for creating, reading, updating, deleting data with responsive interface.</p>
 <div class="tags">
- <span  data-lang="PHP_Tag">#PHP</span>
-      <span  data-lang="SQL_Tag">#SQL</span>
+<span  data-lang="PHP_Tag">#PHP</span>
+<span  data-lang="SQL_Tag">#SQL</span>
 <span  data-lang="JavaScript_Tag">#JavaScript</span>
 </div>
 <div class="project-actions">
@@ -358,8 +387,8 @@ Live Preview
 <h4 data-lang="Project10"> E-commerce Project Using PHP</h4>
 <p data-lang="Project10_Data">A PHP/MySQL e-commerce project enabling browsing products, managing carts, placing orders, showcasing server-side programming and responsive interface.</p>
 <div class="tags">
- <span  data-lang="PHP_Tag">#PHP</span>
-     <span  data-lang="SQL_Tag">#SQL</span>
+<span  data-lang="PHP_Tag">#PHP</span>
+<span  data-lang="SQL_Tag">#SQL</span>
 <span  data-lang="JavaScript_Tag">#JavaScript</span>
 </div>
 <div class="project-actions">
@@ -438,7 +467,7 @@ Live Preview
 <p data-lang="Project14_Data">A web app demonstrating full CRUD functionality with JavaScript, dynamic DOM updates, and real-time data management.</p>
 <div class="tags">
 <span  data-lang="JavaScript_Tag">#JavaScript</span>
-      <span  data-lang="JQuery_Tag">#JQuery</span>
+<span  data-lang="JQuery_Tag">#JQuery</span>
 
 </div>
 <div class="project-actions">
@@ -476,7 +505,7 @@ Live Preview
 <h4 data-lang="Project16">VR Project</h4>
 <p data-lang="Project16_Data">A web VR project using JavaScript and WebVR/WebXR to explore 3D environments with interactive graphics.</p>
 <div class="tags">
- <span  data-lang="WordPress_Tag">#PHP</span>
+<span  data-lang="WordPress_Tag">#PHP</span>
 <span  data-lang="JavaScript_Tag">#JavaScript</span>
 </div>
 <div class="project-actions">
@@ -496,7 +525,7 @@ Live Preview
 <p data-lang="Project17_Data">A browser game inspired by the classic Dinosaur game using JavaScript, showcasing collisions, scoring, event handling, and game logic.</p>
 <div class="tags">
 <span  data-lang="JavaScript_Tag">#JavaScript</span>
- <span  data-lang="JQuery_Tag">#JQuery</span>
+<span  data-lang="JQuery_Tag">#JQuery</span>
 
 
 </div>
@@ -517,9 +546,9 @@ Live Preview
 <h4 data-lang="Project20">Interactive Boxing Game Using OOP</h4>
 <p data-lang="Project20_Data">A boxing game implementing OOP concepts, user interaction, event handling, and timing for an engaging experience.</p>
 <div class="tags">
-     <span  data-lang="OOP_Tag">#OOP</span>
+<span  data-lang="OOP_Tag">#OOP</span>
 <span  data-lang="JavaScript_Tag">#JavaScript</span>
- <span  data-lang="JQuery_Tag">#JQuery</span>
+<span  data-lang="JQuery_Tag">#JQuery</span>
 
 </div>
 <div class="project-actions">
@@ -538,9 +567,9 @@ Live Preview
 <h4 data-lang="Project21">OOP Project - Snake Game</h4>
 <p data-lang="Project21_Data">A classic Snake game implemented with OOP, featuring keyboard controls, scoring, and dynamic movement logic.</p>
 <div class="tags">
-     <span  data-lang="OOP_Tag">#OOP</span>
+<span  data-lang="OOP_Tag">#OOP</span>
 <span  data-lang="JavaScript_Tag">#JavaScript</span>
- <span  data-lang="JQuery_Tag">#JQuery</span>
+<span  data-lang="JQuery_Tag">#JQuery</span>
 </div>
 <div class="project-actions">
 <a href="https://abdallahweb.github.io/Snake/" target="_blank" class="action-btn live" data-lang="Live_Preview">
@@ -558,8 +587,8 @@ Live Preview
 <h4 data-lang="Project22">CRUD and Search Using AJAX</h4>
 <p data-lang="Project22_Data">A web app demonstrating CRUD and real-time search using AJAX, showcasing asynchronous data fetching and dynamic interface updates.</p>
 <div class="tags">
-     <span  data-lang="PHP_Tag">#PHP</span>
-      <span  data-lang="SQL_Tag">#SQL</span>
+<span  data-lang="PHP_Tag">#PHP</span>
+<span  data-lang="SQL_Tag">#SQL</span>
 <span  data-lang="AJAX_Tag">#AJAX</span>
 </div>
 <div class="project-actions">
@@ -578,8 +607,8 @@ Live Preview
 <h4 data-lang="Project23">Prayer Times Application</h4>
 <p data-lang="Project23_Data">A web app retrieving daily prayer times by country and city using an external API with real-time updates.</p>
 <div class="tags">
-     <span  data-lang="API_Tag">#API</span>
-      <span  data-lang="JavaScript_Tag">#JavaScript</span>
+<span  data-lang="API_Tag">#API</span>
+<span  data-lang="JavaScript_Tag">#JavaScript</span>
 
 </div>
 <div class="project-actions">
@@ -598,8 +627,8 @@ Live Preview
 <h4 data-lang="Project24">Countries Information App Using API</h4>
 <p data-lang="Project24_Data">An application fetching and displaying country information like name and flag using a public REST API.</p>
 <div class="tags">
-     <span  data-lang="API_Tag">#API</span>
-      <span  data-lang="JavaScript_Tag">#JavaScript</span>
+<span  data-lang="API_Tag">#API</span>
+<span  data-lang="JavaScript_Tag">#JavaScript</span>
 </div>
 <div class="project-actions">
 <a href="https://abdallahweb.github.io/Country-Api/" target="_blank" class="action-btn live" data-lang="Live_Preview">
@@ -618,9 +647,9 @@ Live Preview
 <p data-lang="Project25_Data">A Laravel school management system for managing students, teachers, classes, and schedules with MVC, roles, and backend logic.</p>
 <div class="tags">
 <span  data-lang="Laravel_Tag">#Laravel</span>
-     <span  data-lang="SQL_Tag">#SQL</span>
+<span  data-lang="SQL_Tag">#SQL</span>
 <span  data-lang="Bootstrap_Tag">#Bootstrap</span>
-    </div>
+</div>
 <div class="project-actions">
 <a href="#" target="" class="action-btn live" data-lang="Live_Preview">
 Live Preview
@@ -629,7 +658,7 @@ Live Preview
 </div>
 </div>
 </div>
-     
+
 <div class="col-lg-4 col-md-6 portfolio-item filter-visualbasic">
 <div class="project-card">
 <img src="assets/img/portfolio/store.webp" alt="Project">
@@ -687,6 +716,20 @@ Live Preview
 <script src="assets/js/cursor.js"></script>
 <script src="assets/js/script.js"></script>
 <script src="assets/js/languages_portfolio.js"></script>
+<script>
+
+var loadingVar;
+
+function loadingFunction() {
+loadingVar = setTimeout(showPage, 1000);
+}
+
+function showPage() {
+document.getElementById("loader").style.display = "none";
+document.getElementById("loadingDiv").style.display = "block";
+$( ".filter-active" ).trigger( "click" );
+}
+</script>
 
 </body>
 
