@@ -46,12 +46,12 @@ transform: translate(-50%, -50%);
 
 }
 
-#myDiv {
+#loadingDiv {
 display: none;
 }
 </style>
 </head>
-<body onload="myFunction()">
+<body onload="loadingFunction()">
 
 <div  id="loader">
 <img class="img-fluid imgLoader" src="./assets/img/icon.jpg">
@@ -59,7 +59,7 @@ display: none;
 
 
 
-<div  style="display:none;" id="myDiv">
+<div  style="display:none;" id="loadingDiv">
 
 <input id="active" type="checkbox">
 <label class="menu-btn" for="active"><i class="fas fa-bars"></i></label>
@@ -305,15 +305,15 @@ Web Developer with a strong passion for detail and clean architecture, specializ
 
 <script>
 
-var myVar;
+var loadingVar;
 
-function myFunction() {
-myVar = setTimeout(showPage, 1000);
+function loadingFunction() {
+loadingVar = setTimeout(showPage, 1000);
 }
 
 function showPage() {
 document.getElementById("loader").style.display = "none";
-document.getElementById("myDiv").style.display = "block";
+document.getElementById("loadingDiv").style.display = "block";
 $( ".filter-active" ).trigger( "click" );
 }
 </script>
