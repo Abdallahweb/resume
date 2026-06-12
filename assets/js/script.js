@@ -11,9 +11,9 @@ $(document).ready(function() {
 anime({
   targets: '.ml15 .word',
   opacity: [0, 1],
-  translateY: [30, 0],
+  translateY: [70, 0],
   easing: 'easeOutExpo',
-  duration: 800,
+  duration: 1000,
   delay: anime.stagger(150)
 });    // Preparing text for letter-by-letter animation (ml6)
     var textWrapper = document.querySelector('.ml6 h1'); // Target the h1 inside ml6
