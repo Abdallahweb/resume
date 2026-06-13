@@ -8,14 +8,17 @@ $(document).ready(function() {
 
     // 2. Anime.js Animations
     // Animation for the main header (ml15)
+
 anime({
   targets: '.ml15 .word',
   opacity: [0, 1],
-  translateY: [70, 0],
+  scale: [1.2, 1],
+  filter: ['blur(2px)', 'blur(0px)'],
+  duration: 1500,
   easing: 'easeOutExpo',
-  duration: 1000,
   delay: anime.stagger(150)
-});    // Preparing text for letter-by-letter animation (ml6)
+});
+    // Preparing text for letter-by-letter animation (ml6)
     var textWrapper = document.querySelector('.ml6 h1'); // Target the h1 inside ml6
     // Check if the element exists and contains text to replace
     if (textWrapper) {
