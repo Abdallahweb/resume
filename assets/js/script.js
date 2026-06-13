@@ -9,15 +9,24 @@ $(document).ready(function() {
     // 2. Anime.js Animations
     // Animation for the main header (ml15)
 
-anime({
-  targets: '.ml15 .word',
-  opacity: [0, 1],
-  scale: [1.2, 1],
-  filter: ['blur(2px)', 'blur(0px)'],
-  duration: 1500,
-  easing: 'easeOutExpo',
-  delay: anime.stagger(150)
-});
+// anime.timeline()
+// .add({
+//   targets: '.ml15 .word',
+//   translateY: [80, 0],
+//   opacity: [0, 1],
+//   duration: 1200,
+//   easing: 'easeOutExpo',
+//   delay: anime.stagger(100)
+// })
+// .add({
+//   targets: '.ml15 .word',
+//   translateY: [-5, 0],
+//   duration: 600,
+//   easing: 'easeOutQuad',
+//   delay: anime.stagger(50)
+// }, '-=600');
+
+
     // Preparing text for letter-by-letter animation (ml6)
     var textWrapper = document.querySelector('.ml6 h1'); // Target the h1 inside ml6
     // Check if the element exists and contains text to replace
