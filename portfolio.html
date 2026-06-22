@@ -28,6 +28,16 @@
 
 
 <style>
+#loadMoreBtn{
+background-color: #053AC4;
+border-radius:20px;
+padding:5px 30px;
+}
+
+.portfolio-hide{
+display: none;
+}
+
 #loader {
 text-align: center;
 }
@@ -100,12 +110,12 @@ display: none;
 <div class="row">
 <div class="col-lg-12 d-flex justify-content-center">
 <ul id="portfolio-flters">
-<li data-filter="*" class="filter-active" data-lang="All">All (26)</li>
+<li href="#" class="filter-active" data-lang="All">All (26)</li>
 <li data-filter=".filter-web" data-lang="WordPress">WordPress (4)</li>
 <li data-filter=".filter-laravel" data-lang="Laravel">Laravel (4)</li>
 <li data-filter=".filter-PHP" data-lang="PHP">PHP (4)</li>
 <li data-filter=".filter-AI" data-lang="AI">AI (2)</li>
-<li data-filter=".filter-java" data-lang="JavaScript">JavaScript (7)</li>
+<!-- <li data-filter=".filter-java" data-lang="JavaScript">JavaScript (7)</li> -->
 <li data-filter=".filter-api" data-lang="API">API (3)</li>
 <li data-filter=".filter-oop" data-lang="OOP">OOP (2)</li>
 </ul>
@@ -227,9 +237,9 @@ Live Preview
 <h4 data-lang="Project22">AI Chatbot For Medical Consultations</h4>
 <p data-lang="Project22_Data">An AI-powered medical chatbot that provides instant, reliable health guidance by understanding user questions and responding interactively.</p>
 <div class="tags">
-    <span  data-lang="AI_Tag">#AI</span>
-    <span  data-lang="PHP_Tag">#PHP</span>
-    <span  data-lang="JavaScript_Tag">#JavaScript</span>
+<span  data-lang="AI_Tag">#AI</span>
+<span  data-lang="PHP_Tag">#PHP</span>
+<span  data-lang="JavaScript_Tag">#JavaScript</span>
 </div>
 <div class="project-actions">
 <a href="https://chatbotai.42web.io/index.php?i=1" target="_blank" class="action-btn live" data-lang="Live_Preview">
@@ -250,9 +260,9 @@ Live Preview
 <h4 data-lang="Project28">AI Chatbot for Legal Consultations</h4>
 <p data-lang="Project28_Data">An AI-powered legal chatbot that delivers instant, reliable legal guidance by understanding legal questions and providing interactive, real-time responses.</p>
 <div class="tags">
-    <span  data-lang="AI_Tag">#AI</span>
-    <span  data-lang="PHP_Tag">#PHP</span>
-    <span  data-lang="JavaScript_Tag">#JavaScript</span>
+<span  data-lang="AI_Tag">#AI</span>
+<span  data-lang="PHP_Tag">#PHP</span>
+<span  data-lang="JavaScript_Tag">#JavaScript</span>
 </div>
 <div class="project-actions">
 <a href="https://chatbotai.42web.io/legal/" target="_blank" class="action-btn live" data-lang="Live_Preview">
@@ -343,7 +353,7 @@ Live Preview
 </div>
 
 
-    
+
 <div class="col-lg-4 col-md-6 portfolio-item filter-PHP">
 <div class="project-card">
 <img src="assets/img/portfolio/EcommercePhp.webp" style="object-position:50% 0% !important;"  alt="Project">
@@ -473,20 +483,19 @@ Live Preview
 
 
 
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-java">
+<div class="col-lg-4 col-md-6 portfolio-item filter-laravel">
 <div class="project-card">
-<img src="assets/img/portfolio/CrudJavaScript.webp" alt="Project">
+<img src="assets/img/portfolio/school.webp" alt="Project">
 <div class="project-details">
-<h4 data-lang="Project14">CRUD Management System</h4>
-<p data-lang="Project14_Data">A web app demonstrating full CRUD functionality with JavaScript, dynamic DOM updates, and real-time data management.</p>
+<h4 data-lang="Project25">CRUD System Using Laravel</h4>
+<p data-lang="Project25_Data">A CRUD Management System developed with Laravel that demonstrates the implementation of Create, Read, Update, and Delete operations using the MVC architecture.</p>
 <div class="tags">
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
-<span  data-lang="JQuery_Tag">#JQuery</span>
-
+<span  data-lang="Laravel_Tag">#Laravel</span>
+<span  data-lang="SQL_Tag">#SQL</span>
+<span  data-lang="Bootstrap_Tag">#Bootstrap</span>
 </div>
 <div class="project-actions">
-<a href="https://abdallahweb.github.io/Crud/" target="_blank" class="action-btn live" data-lang="Live_Preview">
+<a href="https://abdallah.42web.io/system/" target="_blank" class="action-btn live" data-lang="Live_Preview">
 Live Preview
 </a>
 </div>
@@ -495,25 +504,6 @@ Live Preview
 </div>
 
 
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-java">
-<div class="project-card">
-<img src="assets/img/portfolio/Javascript.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project16">VR Project</h4>
-<p data-lang="Project16_Data">A web VR project using JavaScript and WebVR/WebXR to explore 3D environments with interactive graphics.</p>
-<div class="tags">
-<span  data-lang="WordPress_Tag">#PHP</span>
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
-</div>
-<div class="project-actions">
-<a href="https://vrealtour.com/plan" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
 
 
 <div class="col-lg-4 col-md-6 portfolio-item filter-api">
@@ -536,6 +526,9 @@ Live Preview
 </div>
 </div>
 
+
+
+
 <div class="col-lg-4 col-md-6 portfolio-item filter-api">
 <div class="project-card">
 <img src="assets/img/portfolio/api.webp" alt="Project">
@@ -554,32 +547,6 @@ Live Preview
 </div>
 </div>
 </div>
-
-
-
-
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-laravel">
-<div class="project-card">
-<img src="assets/img/portfolio/school.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project25">CRUD System Using Laravel</h4>
-<p data-lang="Project25_Data">A CRUD Management System developed with Laravel that demonstrates the implementation of Create, Read, Update, and Delete operations using the MVC architecture.</p>
-<div class="tags">
-<span  data-lang="Laravel_Tag">#Laravel</span>
-<span  data-lang="SQL_Tag">#SQL</span>
-<span  data-lang="Bootstrap_Tag">#Bootstrap</span>
-</div>
-<div class="project-actions">
-<a href="https://abdallah.42web.io/system/" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-
 
 
 
@@ -607,49 +574,6 @@ Live Preview
 
 
 
-<div class="col-lg-4 col-md-6 portfolio-item filter-java">
-<div class="project-card">
-<img src="assets/img/portfolio/alarm.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project13">JavaScript Alarm Clock</h4>
-<p data-lang="Project13_Data">A simple alarm clock app allowing users to set alarms and receive notifications at scheduled times.</p>
-<div class="tags">
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
-    <span  data-lang="JQuery_Tag">#JQuery</span>
-</div>
-<div class="project-actions">
-<a href="https://abdallahweb.github.io/Alarm" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-
-
-
-
-<div class="col-lg-4 col-md-6 portfolio-item filter-java">
-<div class="project-card">
-<img src="assets/img/portfolio/X-O Game.webp" alt="Project">
-<div class="project-details">
-<h4 data-lang="Project11">Tic Tac Toe Game</h4>
-<p data-lang="Project11_Data">A classic Tic Tac Toe game built with JavaScript demonstrating game logic, DOM manipulation, and event handling.</p>
-<div class="tags">
-<span  data-lang="JavaScript_Tag">#JavaScript</span>
-    <span  data-lang="JQuery_Tag">#JQuery</span>
-</div>
-<div class="project-actions">
-<a href="https://abdallahweb.github.io/Game-X-O/" target="_blank" class="action-btn live" data-lang="Live_Preview">
-Live Preview
-</a>
-</div>
-</div>
-</div>
-</div>
-
-
 <div class="col-lg-4 col-md-6 portfolio-item filter-oop">
 <div class="project-card">
 <img src="assets/img/portfolio/Boxing.webp" alt="Project">
@@ -671,7 +595,96 @@ Live Preview
 </div>
 </div>
 
-<div class="col-lg-4 col-md-6 portfolio-item filter-java">
+
+
+
+<div class="col-lg-4 col-md-6 portfolio-item filter-java portfolio-hide">
+<div class="project-card">
+<img src="assets/img/portfolio/Javascript.webp" alt="Project">
+<div class="project-details">
+<h4 data-lang="Project16">VR Project</h4>
+<p data-lang="Project16_Data">A web VR project using JavaScript and WebVR/WebXR to explore 3D environments with interactive graphics.</p>
+<div class="tags">
+<span  data-lang="WordPress_Tag">#PHP</span>
+<span  data-lang="JavaScript_Tag">#JavaScript</span>
+</div>
+<div class="project-actions">
+<a href="https://vrealtour.com/plan" target="_blank" class="action-btn live" data-lang="Live_Preview">
+Live Preview
+</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-lg-4 col-md-6 portfolio-item filter-java portfolio-hide">
+<div class="project-card">
+<img src="assets/img/portfolio/alarm.webp" alt="Project">
+<div class="project-details">
+<h4 data-lang="Project13">JavaScript Alarm Clock</h4>
+<p data-lang="Project13_Data">A simple alarm clock app allowing users to set alarms and receive notifications at scheduled times.</p>
+<div class="tags">
+<span  data-lang="JavaScript_Tag">#JavaScript</span>
+<span  data-lang="JQuery_Tag">#JQuery</span>
+</div>
+<div class="project-actions">
+<a href="https://abdallahweb.github.io/Alarm" target="_blank" class="action-btn live" data-lang="Live_Preview">
+Live Preview
+</a>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="col-lg-4 col-md-6 portfolio-item filter-java portfolio-hide">
+<div class="project-card">
+<img src="assets/img/portfolio/X-O Game.webp" alt="Project">
+<div class="project-details">
+<h4 data-lang="Project11">Tic Tac Toe Game</h4>
+<p data-lang="Project11_Data">A classic Tic Tac Toe game built with JavaScript demonstrating game logic, DOM manipulation, and event handling.</p>
+<div class="tags">
+<span  data-lang="JavaScript_Tag">#JavaScript</span>
+<span  data-lang="JQuery_Tag">#JQuery</span>
+</div>
+<div class="project-actions">
+<a href="https://abdallahweb.github.io/Game-X-O/" target="_blank" class="action-btn live" data-lang="Live_Preview">
+Live Preview
+</a>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="col-lg-4 col-md-6 portfolio-item filter-java portfolio-hide">
+<div class="project-card">
+<img src="assets/img/portfolio/CrudJavaScript.webp" alt="Project">
+<div class="project-details">
+<h4 data-lang="Project14">CRUD Management System</h4>
+<p data-lang="Project14_Data">A web app demonstrating full CRUD functionality with JavaScript, dynamic DOM updates, and real-time data management.</p>
+<div class="tags">
+<span  data-lang="JavaScript_Tag">#JavaScript</span>
+<span  data-lang="JQuery_Tag">#JQuery</span>
+
+</div>
+<div class="project-actions">
+<a href="https://abdallahweb.github.io/Crud/" target="_blank" class="action-btn live" data-lang="Live_Preview">
+Live Preview
+</a>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="col-lg-4 col-md-6 portfolio-item filter-java portfolio-hide">
 <div class="project-card">
 <img src="assets/img/portfolio/Squid.webp" alt="Project">
 <div class="project-details">
@@ -679,7 +692,7 @@ Live Preview
 <p data-lang="Project12_Data">A browser game inspired by Squid Game using JavaScript, showcasing DOM manipulation, event handling, and game logic.</p>
 <div class="tags">
 <span  data-lang="JavaScript_Tag">#JavaScript</span>
-    <span  data-lang="JQuery_Tag">#JQuery</span>
+<span  data-lang="JQuery_Tag">#JQuery</span>
 </div>
 <div class="project-actions">
 <a href="https://abdallahweb.github.io/Squid/" target="_blank" class="action-btn live" data-lang="Live_Preview">
@@ -691,7 +704,7 @@ Live Preview
 </div>
 
 
-<div class="col-lg-4 col-md-6 portfolio-item filter-java">
+<div class="col-lg-4 col-md-6 portfolio-item filter-java portfolio-hide">
 <div class="project-card">
 <img src="assets/img/portfolio/PhotoFilter.webp" alt="Project">
 <div class="project-details">
@@ -699,7 +712,7 @@ Live Preview
 <p data-lang="Project15_Data">A web app enabling users to apply image filters in real-time using JavaScript, demonstrating DOM manipulation and dynamic styling.</p>
 <div class="tags">
 <span  data-lang="JavaScript_Tag">#JavaScript</span>
-    <span  data-lang="JQuery_Tag">#JQuery</span>
+<span  data-lang="JQuery_Tag">#JQuery</span>
 </div>
 <div class="project-actions">
 <a href="https://abdallahweb.github.io/Filter/" target="_blank" class="action-btn live" data-lang="Live_Preview">
@@ -710,7 +723,7 @@ Live Preview
 </div>
 </div>
 
-<div class="col-lg-4 col-md-6 portfolio-item filter-java">
+<div class="col-lg-4 col-md-6 portfolio-item filter-java portfolio-hide">
 <div class="project-card">
 <img src="assets/img/portfolio/hunter.webp" alt="Project">
 <div class="project-details">
@@ -774,8 +787,16 @@ Live Preview
 
 
 </div>
+
+
+<div class="row">
+<div class="col-lg-12 text-center mt-4">
+<button id="loadMoreBtn" class="btn btn-primary">
+Load More
+</button>
 </div>
 </div>
+
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -790,6 +811,106 @@ Live Preview
 <script src="assets/js/cursor.js"></script>
 <script src="assets/js/script.js"></script>
 <script src="assets/js/languages_portfolio.js"></script>
+
+
+<script>
+
+
+$(document).ready(function () {
+
+
+
+var initShow = 19; 
+var counter = initShow;
+var iso;
+
+function showItems(filter) {
+
+
+var hiddenElems = $(".portfolio-item");
+hiddenElems.css("display", "none");
+
+var filteredItems = filter === "*"
+? hiddenElems
+: hiddenElems.filter(filter);
+
+filteredItems.slice(0, counter).css("display", "block");
+if (filteredItems.length <= counter) {
+$("#loadMoreBtn").hide();
+} else {
+$("#loadMoreBtn").show();
+}
+
+if (iso) {
+iso.arrange();
+}
+
+$('.filter-active').on("click", function () {
+$("#loadMoreBtn").show();
+
+});
+}
+
+var portfolioContainer = document.querySelector('.portfolio-container');
+
+if (portfolioContainer) {
+iso = new Isotope(portfolioContainer, {
+itemSelector: '.portfolio-item',
+layoutMode: 'fitRows'
+});
+}
+
+showItems("*");
+
+
+
+
+$("#loadMoreBtn").on("click", function () {
+
+counter += initShow;
+
+var activeFilter = $("#portfolio-flters .filter-active").attr("data-filter") || "*";
+
+showItems(activeFilter);
+});
+
+$("#portfolio-flters li").on("click", function () {
+
+$("#portfolio-flters li").removeClass("filter-active");
+$(this).addClass("filter-active");
+
+counter = initShow;
+
+var filter = $(this).attr("data-filter");
+
+function showItems(filter) {
+
+var hiddenElems = $(".portfolio-item");
+
+hiddenElems.hide();
+
+var filteredItems = filter === "*"
+? hiddenElems
+: hiddenElems.filter(filter);
+
+filteredItems.slice(0, counter).show();
+
+if (filteredItems.length <= counter) {
+$("#loadMoreBtn").hide();
+} else {
+$("#loadMoreBtn").show();
+}
+
+if (iso) {
+iso.reloadItems();
+iso.layout();
+}
+}})
+});
+</script>
+
+
+
 <script>
 
 var loadingVar;
