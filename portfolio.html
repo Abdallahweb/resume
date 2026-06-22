@@ -32,8 +32,7 @@
 background-color: #053AC4;
 border-radius:20px;
 padding:5px 30px;
-  font-weight: bold;
-
+font-weight: bold;
 }
 
 .portfolio-hide{
@@ -113,13 +112,13 @@ display: none;
 <div class="col-lg-12 d-flex justify-content-center">
 <ul id="portfolio-flters">
 <li href="#" class="filter-active" data-lang="All">All (26)</li>
-<li data-filter=".filter-web" data-lang="WordPress">WordPress (4)</li>
-<li data-filter=".filter-laravel" data-lang="Laravel">Laravel (4)</li>
-<li data-filter=".filter-PHP" data-lang="PHP">PHP (4)</li>
-<li data-filter=".filter-AI" data-lang="AI">AI (2)</li>
+<li data-filter=".filter-web" class="hideLoad" data-lang="WordPress">WordPress (4)</li>
+<li data-filter=".filter-laravel"  class="hideLoad" data-lang="Laravel">Laravel (4)</li>
+<li data-filter=".filter-PHP" class="hideLoad" data-lang="PHP">PHP (4)</li>
+<li data-filter=".filter-AI" class="hideLoad" data-lang="AI">AI (2)</li>
 <!-- <li data-filter=".filter-java" data-lang="JavaScript">JavaScript (7)</li> -->
-<li data-filter=".filter-api" data-lang="API">API (3)</li>
-<li data-filter=".filter-oop" data-lang="OOP">OOP (2)</li>
+<li data-filter=".filter-api" class="hideLoad" data-lang="API">API (3)</li>
+<li data-filter=".filter-oop" class="hideLoad" data-lang="OOP">OOP (2)</li>
 </ul>
 </div>
 </div>
@@ -817,41 +816,12 @@ Load More
 
 <script>
 
-
 $(document).ready(function () {
 
-
-
-var initShow = 19; 
+var initShow = 19;
 var counter = initShow;
 var iso;
-
-function showItems(filter) {
-
-
-var hiddenElems = $(".portfolio-item");
-hiddenElems.css("display", "none");
-
-var filteredItems = filter === "*"
-? hiddenElems
-: hiddenElems.filter(filter);
-
-filteredItems.slice(0, counter).css("display", "block");
-if (filteredItems.length <= counter) {
-$("#loadMoreBtn").hide();
-} else {
-$("#loadMoreBtn").show();
-}
-
-if (iso) {
-iso.arrange();
-}
-
-$('.filter-active').on("click", function () {
-$("#loadMoreBtn").show();
-
-});
-}
+var isFiltering = false;
 
 var portfolioContainer = document.querySelector('.portfolio-container');
 
@@ -862,10 +832,47 @@ layoutMode: 'fitRows'
 });
 }
 
+function showItems(filter) {
+
+var items = $(".portfolio-item");
+
+items.hide();
+
+var filtered = filter === "*"
+? items
+: items.filter(filter);
+
+filtered.slice(0, counter).show();
+
+if (isFiltering) {
+$("#loadMoreBtn").hide();
+} else {
+if (filtered.length <= counter) {
+$("#loadMoreBtn").hide();
+} else {
+$("#loadMoreBtn").show();
+}
+}
+
+if (iso) {
+iso.reloadItems();
+iso.layout();
+}
+}
+
+
+
 showItems("*");
 
+$('.hideLoad').on("click", function () {
+$("#loadMoreBtn").hide();
 
+});
 
+$('.filter-active').on("click", function () {
+$("#loadMoreBtn").show();
+
+});
 
 $("#loadMoreBtn").on("click", function () {
 
@@ -878,37 +885,22 @@ showItems(activeFilter);
 
 $("#portfolio-flters li").on("click", function () {
 
-$("#portfolio-flters li").removeClass("filter-active");
-$(this).addClass("filter-active");
+if ($(this).hasClass("filter-active")) return;
+
+let filterValue = $(this).attr("data-filter");
 
 counter = initShow;
 
-var filter = $(this).attr("data-filter");
+$("#portfolio-flters li").removeClass("filter-active");
+$(this).addClass("filter-active");
 
-function showItems(filter) {
+isFiltering = (filterValue !== "*");
 
-var hiddenElems = $(".portfolio-item");
-
-hiddenElems.hide();
-
-var filteredItems = filter === "*"
-? hiddenElems
-: hiddenElems.filter(filter);
-
-filteredItems.slice(0, counter).show();
-
-if (filteredItems.length <= counter) {
-$("#loadMoreBtn").hide();
-} else {
-$("#loadMoreBtn").show();
-}
-
-if (iso) {
-iso.reloadItems();
-iso.layout();
-}
-}})
+showItems(filterValue);
 });
+
+});
+
 </script>
 
 
