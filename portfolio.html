@@ -85,7 +85,7 @@
 <li data-filter=".filter-laravel"  class="hideLoad" data-lang="Laravel">Laravel (4)</li>
 <li data-filter=".filter-PHP" class="hideLoad" data-lang="PHP">PHP (4)</li>
 <li data-filter=".filter-AI" class="hideLoad" data-lang="AI">AI (2)</li>
-<!-- <li data-filter=".filter-java" data-lang="JavaScript">JavaScript (7)</li> -->
+<li data-filter=".filter-java" data-lang="JavaScript">JavaScript (7)</li>
 <li data-filter=".filter-api" class="hideLoad" data-lang="API">API (3)</li>
 <li data-filter=".filter-oop" class="hideLoad" data-lang="OOP">OOP (2)</li>
 </ul>
@@ -842,7 +842,7 @@
 
  
  
-<div class="col-lg-4 col-md-6 portfolio-item filter-java portfolio-hide">
+<div class="col-lg-4 col-md-6 portfolio-item filter-java">
   <div class="project-card">
     <div class="card-thumb">
       <div class="browser-bar">
@@ -883,7 +883,7 @@
 
 
  
-<div class="col-lg-4 col-md-6 portfolio-item filter-java portfolio-hide">
+<div class="col-lg-4 col-md-6 portfolio-item filter-java">
   <div class="project-card">
     <div class="card-thumb">
       <div class="browser-bar">
@@ -923,7 +923,7 @@
 
 
 
-<div class="col-lg-4 col-md-6 portfolio-item filter-java portfolio-hide">
+<div class="col-lg-4 col-md-6 portfolio-item filter-java">
   <div class="project-card">
     <div class="card-thumb">
       <div class="browser-bar">
@@ -964,7 +964,7 @@
 
 
 
- <div class="col-lg-4 col-md-6 portfolio-item filter-java portfolio-hide">
+ <div class="col-lg-4 col-md-6 portfolio-item filter-java">
   <div class="project-card">
     <div class="card-thumb">
       <div class="browser-bar">
@@ -1002,7 +1002,7 @@
   </div>
 </div>
 
-<div class="col-lg-4 col-md-6 portfolio-item filter-java portfolio-hide">
+<div class="col-lg-4 col-md-6 portfolio-item filter-java">
   <div class="project-card">
     <div class="card-thumb">
       <div class="browser-bar">
@@ -1040,7 +1040,7 @@
   </div>
 </div>
 
-<div class="col-lg-4 col-md-6 portfolio-item filter-java portfolio-hide">
+<div class="col-lg-4 col-md-6 portfolio-item filter-java">
   <div class="project-card">
     <div class="card-thumb">
       <div class="browser-bar">
@@ -1078,7 +1078,7 @@
   </div>
 </div>
 
-<div class="col-lg-4 col-md-6 portfolio-item filter-java portfolio-hide">
+<div class="col-lg-4 col-md-6 portfolio-item filter-java">
   <div class="project-card">
     <div class="card-thumb">
       <div class="browser-bar">
@@ -1162,14 +1162,14 @@ Live Preview
 
 </div>
 
-
+<!-- 
 <div class="row">
 <div class="col-lg-12 text-center">
 <button id="loadMoreBtn" class="btn btn-primary"  data-lang="Load_More" >
 Load More
 </button>
 </div>
-</div>
+</div> -->
 
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -1189,89 +1189,89 @@ Load More
 
 <script>
 
-$(document).ready(function () {
+// $(document).ready(function () {
 
-var initShow = 19;
-var counter = initShow;
-var iso;
-var isFiltering = false;
+// var initShow = 19;
+// var counter = initShow;
+// var iso;
+// var isFiltering = false;
 
-var portfolioContainer = document.querySelector('.portfolio-container');
+// var portfolioContainer = document.querySelector('.portfolio-container');
 
-if (portfolioContainer) {
-iso = new Isotope(portfolioContainer, {
-itemSelector: '.portfolio-item',
-layoutMode: 'fitRows'
-});
-}
+// if (portfolioContainer) {
+// iso = new Isotope(portfolioContainer, {
+// itemSelector: '.portfolio-item',
+// layoutMode: 'fitRows'
+// });
+// }
 
-function showItems(filter) {
+// function showItems(filter) {
 
-var items = $(".portfolio-item");
+// var items = $(".portfolio-item");
 
-items.hide();
+// items.hide();
 
-var filtered = filter === "*"
-? items
-: items.filter(filter);
+// var filtered = filter === "*"
+// ? items
+// : items.filter(filter);
 
-filtered.slice(0, counter).show();
+// filtered.slice(0, counter).show();
 
-if (isFiltering) {
-$("#loadMoreBtn").hide();
-} else {
-if (filtered.length <= counter) {
-$("#loadMoreBtn").hide();
-} else {
-$("#loadMoreBtn").show();
-}
-}
+// if (isFiltering) {
+// $("#loadMoreBtn").hide();
+// } else {
+// if (filtered.length <= counter) {
+// $("#loadMoreBtn").hide();
+// } else {
+// $("#loadMoreBtn").show();
+// }
+// }
 
-if (iso) {
-iso.reloadItems();
-iso.layout();
-}
-}
+// if (iso) {
+// iso.reloadItems();
+// iso.layout();
+// }
+// }
 
 
 
-showItems("*");
+// showItems("*");
 
-$('.hideLoad').on("click", function () {
-$("#loadMoreBtn").hide();
+// $('.hideLoad').on("click", function () {
+// $("#loadMoreBtn").hide();
 
-});
+// });
 
-$('.filter-active').on("click", function () {
-window.location.reload();
-});
+// $('.filter-active').on("click", function () {
+// window.location.reload();
+// });
 
-$("#loadMoreBtn").on("click", function () {
+// $("#loadMoreBtn").on("click", function () {
 
-counter += initShow;
+// counter += initShow;
 
-var activeFilter = $("#portfolio-flters .filter-active").attr("data-filter") || "*";
+// var activeFilter = $("#portfolio-flters .filter-active").attr("data-filter") || "*";
 
-showItems(activeFilter);
-});
+// showItems(activeFilter);
+// });
 
-$("#portfolio-flters li").on("click", function () {
+// $("#portfolio-flters li").on("click", function () {
 
-if ($(this).hasClass("filter-active")) return;
+// if ($(this).hasClass("filter-active")) return;
 
-let filterValue = $(this).attr("data-filter");
+// let filterValue = $(this).attr("data-filter");
 
-counter = initShow;
+// counter = initShow;
 
-$("#portfolio-flters li").removeClass("filter-active");
-$(this).addClass("filter-active");
+// $("#portfolio-flters li").removeClass("filter-active");
+// $(this).addClass("filter-active");
 
-isFiltering = (filterValue !== "*");
+// isFiltering = (filterValue !== "*");
 
-showItems(filterValue);
-});
+// showItems(filterValue);
+// });
 
-});
+// });
 
 </script>
 
