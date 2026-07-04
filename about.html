@@ -30,6 +30,25 @@
     <link href="assets/css/about.css" id="theme" rel="stylesheet" /></link>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <style>
+    #loader {
+text-align: center;
+}
+
+.imgLoader{
+position: absolute;
+border-radius: 10px;
+max-width: 400px;
+max-height: 400px;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+
+}
+
+#loadingDiv {
+display: none;
+}
+
     @keyframes zoomOutLoop {
    0% {
     transform: scale(1.2);
@@ -45,9 +64,18 @@
 </style>
 </head>
 
-<body>
-    <div>
-        <input id="active" type="checkbox" />
+
+<body onload="loadingFunction()">
+
+<div  id="loader">
+<img class="img-fluid imgLoader" src="./assets/img/loading.png">
+</div>
+
+
+
+<div  style="display:none;" id="loadingDiv">
+
+    <input id="active" type="checkbox" />
         <label class="menu-btn" for="active">
             <i class="fas fa-bars">
             </i>
@@ -463,7 +491,20 @@
 <script>
   AOS.init();
 </script>
+<script>
 
+var loadingVar;
+
+function loadingFunction() {
+loadingVar = setTimeout(showPage, 1000);
+}
+
+function showPage() {
+document.getElementById("loader").style.display = "none";
+document.getElementById("loadingDiv").style.display = "block";
+$( ".filter-active" ).trigger( "click" );
+}
+</script> 
 </body>
 
 </html>
