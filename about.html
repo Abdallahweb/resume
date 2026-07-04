@@ -29,7 +29,20 @@
     <link href="assets/css/pointer.css" rel="stylesheet" />
     <link href="assets/css/about.css" id="theme" rel="stylesheet" /></link>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+    @keyframes zoomOutLoop {
+   0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.zoom-element {
+  animation: zoomOutLoop 1s ease-in-out;
+}
 
+</style>
 </head>
 
 <body>
@@ -94,7 +107,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-4 mt-2"> 
-                        <img alt="Abdallah Fouad" class="pt-4 img-fluid"  data-aos="zoom-out"  data-aos-duration="1000"
+                        <img alt="Abdallah Fouad" class="pt-4 img-fluid zoom-element"
                             src="./assets/img/about.webp" />
                     </div>
                     <div class="col-lg-8 content pt-4 pt-lg-0"  data-aos="fade-in"  data-aos-duration="2000" >
