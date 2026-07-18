@@ -45,6 +45,7 @@ gtag('js', new Date());
 gtag('config', 'G-5KRB6LLHKJ');
 </script>
 <style>
+
 #loader {
 text-align: center;
 height:100vh;
@@ -65,52 +66,9 @@ transform: translate(-50%, -50%);
 
 }
 
+
 #loadingDiv {
 display: none;
-}
-
-.loadDiv{
-position: absolute;
-left: 50%;
-top:80%;
-transform: translate(-50%,-50%);
-color: #1e0263;
-}
-
-.loadSpan{
-font-size: 40px;
-letter-spacing: 5px;
-text-transform: uppercase;
-line-height: 1;
-mix-blend-mode: difference;
-font-family: 'Poppins', sans-serif;
-}
-
-.loadDiv::before{
-content: "";
-width: 40px;
-height: 100%;
-background-color: #1e0263;
-position: absolute;
-left: 0;
-top: 0;
-animation: go 4s linear infinite;
-
-}
-@keyframes go{
-0%{
-left: 0;
-}
-50%{
-left: 80%;
-
-
-}
-100%{
-left: 0;
-
-
-}
 }
 
 </style>
@@ -253,7 +211,6 @@ loadingVar = setTimeout(showPage, 1000);
 function showPage() {
 document.getElementById("loader").style.display = "none";
 document.getElementById("loadingDiv").style.display = "block";
-$( ".filter-active" ).trigger( "click" );
 }
 </script> 
 
