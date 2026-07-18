@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="Abdallah Fouad - Web Developer Resume, Portfolio." name="description" />
-    <meta content="Abdallah Fouad - Resume" property="og:title" />
-    <meta content="website" property="og:type" />
-    <title data-lang="Home_Page_title">
-        Abdallah Fouad | Web Developer
-    </title>
-    <link href="assets/img/icon.jpg" rel="icon" />
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-    <link href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
-        rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&amp;display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&amp;display=swap"
-        rel="stylesheet" />
-    <link href="assets/css/pointer.css" rel="stylesheet" />
-    <link href="assets/css/about.css" id="theme" rel="stylesheet" /></link>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta content="Abdallah Fouad - Web Developer Resume, Portfolio." name="description" />
+<meta content="Abdallah Fouad - Resume" property="og:title" />
+<meta content="website" property="og:type" />
+<title data-lang="Home_Page_title">
+Abdallah Fouad | Web Developer
+</title>
+<link href="assets/img/icon.jpg" rel="icon" />
+<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+<link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+<link href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&amp;display=swap"
+rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&amp;display=swap"
+rel="stylesheet" />
+<link href="assets/css/pointer.css" rel="stylesheet" />
+<link href="assets/css/about.css" id="theme" rel="stylesheet" /></link>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <style>
-    #loader {
+#loader {
 text-align: center;
 }
 
@@ -43,31 +43,68 @@ left: 50%;
 transform: translate(-50%, -50%);
 }
 
-.imgLoader2{
-position: absolute;
-border-radius: 50px;
-max-width: 40px;
-max-height: 50px;
-top: 80%;
-left: 50%;
-transform: translate(-50%, -50%);
-}
 
 
 #loadingDiv {
 display: none;
 }
 
-    @keyframes zoomOutLoop {
-   0% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
+
+@keyframes zoomOutLoop {
+0% {
+transform: scale(1.2);
+}
+100% {
+transform: scale(1);
+}
 }
 .zoom-element {
-  animation: zoomOutLoop 1s ease-in-out;
+animation: zoomOutLoop 1s ease-in-out;
+}
+
+.loadDiv{
+position: absolute;
+left: 50%;
+top:80%;
+transform: translate(-50%,-50%);
+color: #1e0263;
+}
+
+.loadSpan{
+font-size: 40px;
+letter-spacing: 5px;
+text-transform: uppercase;
+line-height: 1;
+mix-blend-mode: difference;
+
+
+}
+
+.loadDiv::before{
+content: "";
+width: 40px;
+height: 100%;
+background-color: #1e0263;
+position: absolute;
+left: 0;
+top: 0;
+animation: go 4s linear infinite;
+
+}
+@keyframes go{
+0%{
+left: 0;
+}
+50%{
+left: 80%;
+
+
+}
+100%{
+left: 0;
+
+
+}
 }
 
 </style>
@@ -76,431 +113,433 @@ display: none;
 
 <body onload="loadingFunction()">
 
-<div  id="loader">
-<img class="img-fluid imgLoader" src="./assets/img/loading.png"><br>
-<img class="img-fluid imgLoader2"  src="./assets/img/load.gif">
 
+<div  id="loader">
+<img class="img-fluid imgLoader" src="./assets/img/loading.png">
+<div class="loadDiv">
+<span class="loadSpan">Loading</span>
+</div>
 </div>
 
 
 
 <div  style="display:none;" id="loadingDiv">
 
-    <input id="active" type="checkbox" />
-        <label class="menu-btn" for="active">
-            <i class="fas fa-bars">
-            </i>
-        </label>
-        <div class="wrapper">
-            <section class="menu">
-                <ul>
-                    <li class="link1" id="Home_Menu">
-                        <a class="link-menu" data-lang="Home_Menu" href="./index.html">
-                            HOME
-                        </a>
-                    </li>
-                    <li class="link1" id="Portfolio_Menu">
-                        <a class="link-menu" data-lang="Portfolio_Menu" href="./portfolio.html">
-                            PORTFOLIO
-                        </a>
-                    </li>
-                    <li class="link1" id="About_Menu">
-                        <a class="link-menu" data-lang="About_Menu" href="./about.html">
-                            ABOUT
-                        </a>
-                    </li>
-                </ul>
-                <div>
-                    <a href="https://abdallahweb.github.io/resume/Abdallah%20Fouad%20CV.pdf">
-                        <button class="cv">
-                            <i class="fas fa-download">
-                            </i>
-                            <span data-lang="Download">
-                                DOWNLOAD CV
-                            </span>
-                        </button>
-                    </a>
-                </div>
-            </section>
-        </div>
-        <div class="language-switcher" id="lang-switcher" onclick="LanguagesFunction()"
-            style="direction: ltr !important;">
-            <span class="lang-option active" data-lang="EN">
-                EN
-            </span>
-            <span class="lang-option" data-lang="AR">
-                AR
-            </span>
-            <div class="lang-toggle-indicator">
-            </div>
-        </div>
-        <section class="about" id="about">
-            <div class="container about-me">
-                <div class="section-title animate__animated animate__fadeIn">
-                    <h2 data-lang="About">
-                        About
-                    </h2>
-                    <p data-lang="Learn">
-                        Learn More About Me
-                    </p>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 mt-2"> 
-                        <img alt="Abdallah Fouad" class="pt-4 img-fluid zoom-element"
-                            src="./assets/img/about.webp" />
-                    </div>
-                    <div class="col-lg-8 content pt-4 pt-lg-0"  data-aos="fade-in"  data-aos-duration="2000" >
-                        <div class="section-title">
-                            <h2 data-lang="Summary">
-                                Summary
-                            </h2>
-                        </div>
-                        <p class="text-white about-description" data-lang="Summary_Data">
-                            Web Developer with a strong passion for detail and clean architecture, specializing in
-                            building and maintaining modern, high-performance, and dynamic web applications. Proficient
-                            in HTML5, CSS3, and JavaScript, focused on crafting responsive, user-centric UIs. I possess
-                            an expert command of PHP and SQL for robust back-end logic, with proven hands-on experience
-                            using the Laravel framework to deliver secure and scalable solutions. My work is guided by
-                            solid OOP principles, ensuring a commitment to clean code, performance optimization, and
-                            continuous technical growth.
-                        </p>
-                        <div class="row animate__animated animate__fadeIn about-info-grid">
-                            <div class="col-lg-6">
-                                <ul>
-                                    <li>
-                                        <i class="fa-solid fa-briefcase">
-                                        </i>
-                                        <span class="details" data-lang="Exp_Years">
-                                            3 Years
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <i class="fa-solid fa-graduation-cap">
-                                        </i>
-                                        <span class="details" data-lang="Bachelor">
-                                            Bachelor of Arts
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <i class="fa-solid fa-award">
-                                        </i>
-                                        <span class="details diploma-text" data-lang="Diploma">
-                                            Diploma in Web Development (Full Stack)
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <ul>
-                                    <li>
-                                        <i class="fa-solid fa-location-dot">
-                                        </i>
-                                        <span class="details" data-lang="City">
-                                            Cairo - Egypt
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <i class="fa-solid fa-envelope">
-                                        </i>
-                                        <span class="details email-link">
-                                            abdallahforweb@gmail.com
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <i class="fa-solid fa-mobile-alt">
-                                        </i>
-                                        <span class="details">
-                                            01156460836
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="skills-section" id="skills">
-            <div class="container skills">
-                <div class="section-title">
-                    <h2 class="animate__animated animate__fadeIn" data-lang="Skills">
-                        Skills
-                    </h2>
-                </div>
-                <div class="row skills-grid">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="skill-card" data-aos="fade-up" data-aos-duration="700">
-                            <span class="highlight">
-                            </span>
-                            <div class="skill-icon">
-                                <i class="fab fa-js">
-                                </i>
-                            </div>
-                            <h3 class="skill-title" data-lang="JavaScript">
-                                JavaScript
-                            </h3>
-                            <p class="skill-description" data-lang="JavaScript_Skill">
-                                Developing interactive, dynamic user interfaces and client-side logic.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="skill-card"  data-aos="fade-up" data-aos-duration="1000">
-                            <span class="highlight">
-                            </span>
-                            <div class="skill-icon">
-                                <i class="fas fa-bolt">
-                                </i>
-                            </div>
-                            <h3 class="skill-title" data-lang="JQuery">
-                                JQuery
-                            </h3>
-                            <p class="skill-description" data-lang="JQuery_Skill">
-                                Accelerating and simplifying interactive front-end development by streamlining complex
-                                DOM and AJAX tasks.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="skill-card"  data-aos="fade-up" data-aos-duration="2000">
-                            <span class="highlight">
-                            </span>
-                            <div class="skill-icon">
-                                <i class="fab fa-php">
-                                </i>
-                            </div>
-                            <h3 class="skill-title" data-lang="PHP">
-                                PHP
-                            </h3>
-                            <p class="skill-description" data-lang="PHP_Skill">
-                                Generating dynamic content and handling complex server-side logic to manage core data
-                                and functionalities.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="skill-card"  data-aos="fade-up" data-aos-duration="3000">
-                            <span class="highlight">
-                            </span>
-                            <div class="skill-icon">
-                                <i class="fas fa-database">
-                                </i>
-                            </div>
-                            <h3 class="skill-title" data-lang="SQL">
-                                SQL
-                            </h3>
-                            <p class="skill-description" data-lang="SQL_Skill">
-                                Database design, optimization, and efficient query management.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row skills-grid">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="skill-card" data-aos="fade-up" data-aos-duration="700">
-                            <span class="highlight">
-                            </span>
-                            <div class="skill-icon">
-                                <i class="fas fa-object-group">
-                                </i>
-                            </div>
-                            <h3 class="skill-title" data-lang="OOP">
-                                OOP
-                            </h3>
-                            <p class="skill-description" data-lang="OOP_Skill">
-                                Applying the OOP methodology to design organized, maintainable code using Classes and
-                                Objects.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="skill-card" data-aos="fade-up" data-aos-duration="1000">
-                            <span class="highlight">
-                            </span>
-                            <div class="skill-icon">
-                                <i class="fas fa-link">
-                                </i>
-                            </div>
-                            <h3 class="skill-title" data-lang="API">
-                                API
-                            </h3>
-                            <p class="skill-description" data-lang="API_Skill">
-                                Building robust data connectors (APIs) to enable seamless and reliable interaction
-                                across distinct systems.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="skill-card" data-aos="fade-up" data-aos-duration="2000">
-                            <span class="highlight">
-                            </span>
-                            <div class="skill-icon">
-                                <i class="fab fa-wordpress">
-                                </i>
-                            </div>
-                            <h3 class="skill-title" data-lang="WordPress">
-                                WordPress
-                            </h3>
-                            <p class="skill-description" data-lang="WordPress_Skill">
-                                Custom theme development, plugin integration, and site optimization.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="skill-card" data-aos="fade-up" data-aos-duration="3000">
-                            <span class="highlight">
-                            </span>
-                            <div class="skill-icon">
-                                <i class="fab fa-laravel">
-                                </i>
-                            </div>
-                            <h3 class="skill-title" data-lang="Laravel">
-                                Laravel
-                            </h3>
-                            <p class="skill-description" data-lang="Laravel_Skill">
-                                I use the Laravel framework, known for its power and elegant syntax, to ensure the
-                                design and building of modern and reliable web applications.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="skills-section" id="skills">
-            <div class="container skills">
-                <div class="section-title">
-                    <h2 class="animate__animated animate__fadeIn" data-lang="Work_Experiences">
-                        Work Experience
-                    </h2>
-                </div>
-            </div>
-            <section class="work_experience_area pt-115" id="work">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-6">
-                            <div class="section_title text-center pb-30">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="work_experience">
-                        <div class="row">
-                            <div class="col-lg-12"  data-aos="fade-in"  data-aos-duration="2000" >
-                                <div class="single_experience d-lg-flex align-items-center flex-wrap wow fadeIn"
-                                    data-wow-delay="0.2s" data-wow-duration="1.3s">
-                                    <div class="experience_title order-last">
-                                        <h3 class="title" data-lang="Web_Developer">
-                                            Web Developer
-                                        </h3>
-                                        <p data-lang="Marketing_Company">
-                                            Marketing &amp; VR Company
-                                        </p>
-                                        <span class="date" data-lang="Date_Company1">
-                                            1 Year 6 Months
-                                        </span>
-                                    </div>
-                                    <div class="experience_number">
-                                        <span class="exp-number">
-                                            01
-                                        </span>
-                                    </div>
-                                    <div class="experience_content order-first">
-                                        <ol>
-                                            <li data-lang="Work_Company1_1">
-                                                1- Developed custom websites tailored to meet individual client
-                                                requirements.
-                                            </li>
-                                            <li data-lang="Work_Company1_2">
-                                                2- Utilized expertise in HTML, CSS, JavaScript, and WordPress to deliver
-                                                high-quality, efficient code across a range of projects.
-                                            </li>
-                                            <li data-lang="Work_Company1_3">
-                                                3- Integrated augmented reality features by creating interactive
-                                                elements that enhance user engagement and leverage AR technology.
-                                            </li>
-                                        </ol>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12"  data-aos="fade-in"  data-aos-duration="2000" >
-                                <div class="single_experience d-lg-flex align-items-center flex-wrap wow fadeIn"
-                                    data-wow-delay="0.5s" data-wow-duration="1.3s">
-                                    <div class="experience_title text-lg-right">
-                                        <h3 class="title" data-lang="Web_Developer">
-                                            Web Developer
-                                        </h3>
-                                        <p data-lang="Software_Company">
-                                            Software Company
-                                        </p>
-                                        <span class="date" data-lang="Date_Company2">
-                                            1 Year 3 Months
-                                        </span>
-                                    </div>
-                                    <div class="experience_number">
-                                        <span class="exp-number">
-                                            02
-                                        </span>
-                                    </div>
-                                    <div class="experience_content">
-                                        <ol>
-                                            <li data-lang="Work_Company2_1">
-                                                1- Maintained MySQL databases to store and manage dynamic content for
-                                                websites.
-                                            </li>
-                                            <li data-lang="Work_Company2_2">
-                                                2- Developed secure and reliable web-based solutions tailored to meet
-                                                client needs.
-                                            </li>
-                                            <li data-lang="Work_Company2_3">
-                                                3- Utilized PHP and content creation tools to design, build, and
-                                                maintain high-performing websites.
-                                            </li>
-                                            <li data-lang="Work_Company2_4">
-                                                4- Established and implemented structured procedures for continuous
-                                                website updates and improvements.
-                                            </li>
-                                            <li data-lang="Work_Company2_5">
-                                                5- Debugged and optimized websites by identifying and resolving
-                                                functionality and performance issues.
-                                            </li>
-                                        </ol>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><br><br>
-            </section>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
-            </script>
-            <script src="assets/vendor/purecounter/purecounter_vanilla.js">
-            </script>
-            <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js">
-            </script>
-            <script src="assets/vendor/glightbox/js/glightbox.min.js">
-            </script>
-            <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js">
-            </script>
-            <script src="assets/vendor/swiper/swiper-bundle.min.js">
-            </script>
-            <script src="assets/vendor/waypoints/noframework.waypoints.js">
-            </script>
-            <script src="assets/vendor/php-email-form/validate.js">
-            </script>
-            <script src="assets/js/main.js">
-            </script>
-            <script src="assets/js/query.js">
-            </script>
-            <script src="assets/js/cursor.js">
-            </script>
-            <script src="assets/js/script.js">
-            </script>
-            <script src="assets/js/languages_about.js">
-            </script>
-            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<input id="active" type="checkbox" />
+<label class="menu-btn" for="active">
+<i class="fas fa-bars">
+</i>
+</label>
+<div class="wrapper">
+<section class="menu">
+<ul>
+<li class="link1" id="Home_Menu">
+<a class="link-menu" data-lang="Home_Menu" href="./index.html">
+HOME
+</a>
+</li>
+<li class="link1" id="Portfolio_Menu">
+<a class="link-menu" data-lang="Portfolio_Menu" href="./portfolio.html">
+PORTFOLIO
+</a>
+</li>
+<li class="link1" id="About_Menu">
+<a class="link-menu" data-lang="About_Menu" href="./about.html">
+ABOUT
+</a>
+</li>
+</ul>
+<div>
+<a href="https://abdallahweb.github.io/resume/Abdallah%20Fouad%20CV.pdf">
+<button class="cv">
+<i class="fas fa-download">
+</i>
+<span data-lang="Download">
+DOWNLOAD CV
+</span>
+</button>
+</a>
+</div>
+</section>
+</div>
+<div class="language-switcher" id="lang-switcher" onclick="LanguagesFunction()"
+style="direction: ltr !important;">
+<span class="lang-option active" data-lang="EN">
+EN
+</span>
+<span class="lang-option" data-lang="AR">
+AR
+</span>
+<div class="lang-toggle-indicator">
+</div>
+</div>
+<section class="about" id="about">
+<div class="container about-me">
+<div class="section-title animate__animated animate__fadeIn">
+<h2 data-lang="About">
+About
+</h2>
+<p data-lang="Learn">
+Learn More About Me
+</p>
+</div>
+<div class="row">
+<div class="col-lg-4 mt-2"> 
+<img alt="Abdallah Fouad" class="pt-4 img-fluid zoom-element"
+src="./assets/img/about.webp" />
+</div>
+<div class="col-lg-8 content pt-4 pt-lg-0"  data-aos="fade-in"  data-aos-duration="2000" >
+<div class="section-title">
+<h2 data-lang="Summary">
+Summary
+</h2>
+</div>
+<p class="text-white about-description" data-lang="Summary_Data">
+Web Developer with a strong passion for detail and clean architecture, specializing in
+building and maintaining modern, high-performance, and dynamic web applications. Proficient
+in HTML5, CSS3, and JavaScript, focused on crafting responsive, user-centric UIs. I possess
+an expert command of PHP and SQL for robust back-end logic, with proven hands-on experience
+using the Laravel framework to deliver secure and scalable solutions. My work is guided by
+solid OOP principles, ensuring a commitment to clean code, performance optimization, and
+continuous technical growth.
+</p>
+<div class="row animate__animated animate__fadeIn about-info-grid">
+<div class="col-lg-6">
+<ul>
+<li>
+<i class="fa-solid fa-briefcase">
+</i>
+<span class="details" data-lang="Exp_Years">
+3 Years
+</span>
+</li>
+<li>
+<i class="fa-solid fa-graduation-cap">
+</i>
+<span class="details" data-lang="Bachelor">
+Bachelor of Arts
+</span>
+</li>
+<li>
+<i class="fa-solid fa-award">
+</i>
+<span class="details diploma-text" data-lang="Diploma">
+Diploma in Web Development (Full Stack)
+</span>
+</li>
+</ul>
+</div>
+<div class="col-lg-6">
+<ul>
+<li>
+<i class="fa-solid fa-location-dot">
+</i>
+<span class="details" data-lang="City">
+Cairo - Egypt
+</span>
+</li>
+<li>
+<i class="fa-solid fa-envelope">
+</i>
+<span class="details email-link">
+abdallahforweb@gmail.com
+</span>
+</li>
+<li>
+<i class="fa-solid fa-mobile-alt">
+</i>
+<span class="details">
+01156460836
+</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="skills-section" id="skills">
+<div class="container skills">
+<div class="section-title">
+<h2 class="animate__animated animate__fadeIn" data-lang="Skills">
+Skills
+</h2>
+</div>
+<div class="row skills-grid">
+<div class="col-lg-3 col-md-6">
+<div class="skill-card" data-aos="fade-up" data-aos-duration="700">
+<span class="highlight">
+</span>
+<div class="skill-icon">
+<i class="fab fa-js">
+</i>
+</div>
+<h3 class="skill-title" data-lang="JavaScript">
+JavaScript
+</h3>
+<p class="skill-description" data-lang="JavaScript_Skill">
+Developing interactive, dynamic user interfaces and client-side logic.
+</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="skill-card"  data-aos="fade-up" data-aos-duration="1000">
+<span class="highlight">
+</span>
+<div class="skill-icon">
+<i class="fas fa-bolt">
+</i>
+</div>
+<h3 class="skill-title" data-lang="JQuery">
+JQuery
+</h3>
+<p class="skill-description" data-lang="JQuery_Skill">
+Accelerating and simplifying interactive front-end development by streamlining complex
+DOM and AJAX tasks.
+</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="skill-card"  data-aos="fade-up" data-aos-duration="2000">
+<span class="highlight">
+</span>
+<div class="skill-icon">
+<i class="fab fa-php">
+</i>
+</div>
+<h3 class="skill-title" data-lang="PHP">
+PHP
+</h3>
+<p class="skill-description" data-lang="PHP_Skill">
+Generating dynamic content and handling complex server-side logic to manage core data
+and functionalities.
+</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="skill-card"  data-aos="fade-up" data-aos-duration="3000">
+<span class="highlight">
+</span>
+<div class="skill-icon">
+<i class="fas fa-database">
+</i>
+</div>
+<h3 class="skill-title" data-lang="SQL">
+SQL
+</h3>
+<p class="skill-description" data-lang="SQL_Skill">
+Database design, optimization, and efficient query management.
+</p>
+</div>
+</div>
+</div>
+<div class="row skills-grid">
+<div class="col-lg-3 col-md-6">
+<div class="skill-card" data-aos="fade-up" data-aos-duration="700">
+<span class="highlight">
+</span>
+<div class="skill-icon">
+<i class="fas fa-object-group">
+</i>
+</div>
+<h3 class="skill-title" data-lang="OOP">
+OOP
+</h3>
+<p class="skill-description" data-lang="OOP_Skill">
+Applying the OOP methodology to design organized, maintainable code using Classes and
+Objects.
+</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="skill-card" data-aos="fade-up" data-aos-duration="1000">
+<span class="highlight">
+</span>
+<div class="skill-icon">
+<i class="fas fa-link">
+</i>
+</div>
+<h3 class="skill-title" data-lang="API">
+API
+</h3>
+<p class="skill-description" data-lang="API_Skill">
+Building robust data connectors (APIs) to enable seamless and reliable interaction
+across distinct systems.
+</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="skill-card" data-aos="fade-up" data-aos-duration="2000">
+<span class="highlight">
+</span>
+<div class="skill-icon">
+<i class="fab fa-wordpress">
+</i>
+</div>
+<h3 class="skill-title" data-lang="WordPress">
+WordPress
+</h3>
+<p class="skill-description" data-lang="WordPress_Skill">
+Custom theme development, plugin integration, and site optimization.
+</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="skill-card" data-aos="fade-up" data-aos-duration="3000">
+<span class="highlight">
+</span>
+<div class="skill-icon">
+<i class="fab fa-laravel">
+</i>
+</div>
+<h3 class="skill-title" data-lang="Laravel">
+Laravel
+</h3>
+<p class="skill-description" data-lang="Laravel_Skill">
+I use the Laravel framework, known for its power and elegant syntax, to ensure the
+design and building of modern and reliable web applications.
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="skills-section" id="skills">
+<div class="container skills">
+<div class="section-title">
+<h2 class="animate__animated animate__fadeIn" data-lang="Work_Experiences">
+Work Experience
+</h2>
+</div>
+</div>
+<section class="work_experience_area pt-115" id="work">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-lg-6">
+<div class="section_title text-center pb-30">
+</div>
+</div>
+</div>
+<div class="work_experience">
+<div class="row">
+<div class="col-lg-12"  data-aos="fade-in"  data-aos-duration="2000" >
+<div class="single_experience d-lg-flex align-items-center flex-wrap wow fadeIn"
+data-wow-delay="0.2s" data-wow-duration="1.3s">
+<div class="experience_title order-last">
+<h3 class="title" data-lang="Web_Developer">
+Web Developer
+</h3>
+<p data-lang="Marketing_Company">
+Marketing &amp; VR Company
+</p>
+<span class="date" data-lang="Date_Company1">
+1 Year 6 Months
+</span>
+</div>
+<div class="experience_number">
+<span class="exp-number">
+01
+</span>
+</div>
+<div class="experience_content order-first">
+<ol>
+<li data-lang="Work_Company1_1">
+1- Developed custom websites tailored to meet individual client
+requirements.
+</li>
+<li data-lang="Work_Company1_2">
+2- Utilized expertise in HTML, CSS, JavaScript, and WordPress to deliver
+high-quality, efficient code across a range of projects.
+</li>
+<li data-lang="Work_Company1_3">
+3- Integrated augmented reality features by creating interactive
+elements that enhance user engagement and leverage AR technology.
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-12"  data-aos="fade-in"  data-aos-duration="2000" >
+<div class="single_experience d-lg-flex align-items-center flex-wrap wow fadeIn"
+data-wow-delay="0.5s" data-wow-duration="1.3s">
+<div class="experience_title text-lg-right">
+<h3 class="title" data-lang="Web_Developer">
+Web Developer
+</h3>
+<p data-lang="Software_Company">
+Software Company
+</p>
+<span class="date" data-lang="Date_Company2">
+1 Year 3 Months
+</span>
+</div>
+<div class="experience_number">
+<span class="exp-number">
+02
+</span>
+</div>
+<div class="experience_content">
+<ol>
+<li data-lang="Work_Company2_1">
+1- Maintained MySQL databases to store and manage dynamic content for
+websites.
+</li>
+<li data-lang="Work_Company2_2">
+2- Developed secure and reliable web-based solutions tailored to meet
+client needs.
+</li>
+<li data-lang="Work_Company2_3">
+3- Utilized PHP and content creation tools to design, build, and
+maintain high-performing websites.
+</li>
+<li data-lang="Work_Company2_4">
+4- Established and implemented structured procedures for continuous
+website updates and improvements.
+</li>
+<li data-lang="Work_Company2_5">
+5- Debugged and optimized websites by identifying and resolving
+functionality and performance issues.
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><br><br>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script src="assets/vendor/purecounter/purecounter_vanilla.js">
+</script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js">
+</script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js">
+</script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js">
+</script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js">
+</script>
+<script src="assets/vendor/waypoints/noframework.waypoints.js">
+</script>
+<script src="assets/vendor/php-email-form/validate.js">
+</script>
+<script src="assets/js/main.js">
+</script>
+<script src="assets/js/query.js">
+</script>
+<script src="assets/js/cursor.js">
+</script>
+<script src="assets/js/script.js">
+</script>
+<script src="assets/js/languages_about.js">
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init();
+AOS.init();
 </script>
 <script>
 
