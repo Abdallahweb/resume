@@ -23,6 +23,9 @@ rel="stylesheet">
 <link href="assets/css/pointer.css" rel="stylesheet">
 <link href="assets/css/portfolio.css" id="theme" rel="stylesheet">
 <style>
+#loader {
+text-align: center;
+}
 
 .imgLoader{
 position: absolute;
@@ -37,6 +40,7 @@ transform: translate(-50%, -50%);
 #loadingDiv {
 display: none;
 }
+
 </style>
 </head>
 
@@ -46,6 +50,16 @@ display: none;
 
 <div  id="loader">
 <img class="img-fluid imgLoader" src="./assets/img/loading.png">
+
+ <div class="wrapperLoad">
+        <div class="circleLoad"></div>
+        <div class="circleLoad"></div>
+        <div class="circleLoad"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+    </div>
+
 <div class="loadDiv">
 <span class="loadSpan">Loading</span>
 </div>
@@ -55,7 +69,9 @@ display: none;
 
 <div  style="display:none;" id="loadingDiv">
 
+
 <input id="active" type="checkbox">
+
 <label class="menu-btn" for="active"><i class="fas fa-bars"></i></label>
 
 <div class="wrapper">
