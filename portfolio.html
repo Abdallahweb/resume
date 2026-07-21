@@ -27,6 +27,21 @@
         #loadingDiv {
             display: none;
         }
+            
+       @keyframes zoomOutLoop {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0);
+        display: none;
+    }
+}
+
+.zoomOut {
+    animation: zoomOutLoop 1s ease-in-out forwards;
+}
+
     </style>
 </head>
 
@@ -34,7 +49,7 @@
 
 <body onload="loadingFunction()">
 
-    <div id="loader" class="animate__animated animate__zoomOut animate__delay-3s" style="height: 100vh;">
+    <div id="loader" style="height:100vh">
         <img class="img-fluid imgLoader" src="./assets/img/loading.png">
 
         <div class="wrapperLoad">
