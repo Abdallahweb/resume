@@ -13,3 +13,12 @@ $( ".filter-active" ).trigger( "click" );
 }
 
 
+
+
+$("#contact").click(function(){
+$("#whatsContact").toggleClass("show");
+$("#mobileContact").toggleClass("show");
+
+$(".contact").toggleClass("fa-angle-double-right")
+$(".contact").toggleClass("fa-angle-double-left")
+});

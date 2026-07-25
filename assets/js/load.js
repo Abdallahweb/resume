@@ -13,6 +13,18 @@ $( ".filter-active" ).trigger( "click" );
 }
 
 
+
+$("#contact").click(function(){
+$("#whatsContact").toggleClass("show");
+$("#mobileContact").toggleClass("show");
+
+$(".contact").toggleClass("fa-angle-double-right")
+$(".contact").toggleClass("fa-angle-double-left")
+});
+
+
+
+
 document.onkeydown = function(e) {
         if (e.ctrlKey && 
             (e.keyCode === 67 || 
@@ -47,4 +59,6 @@ $(document).keydown(function (event) {
         return false;
     }
 });
+
+
 
