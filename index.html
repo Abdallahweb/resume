@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdallah Fouad — Full Stack Web Developer</title>
+<meta name="description" content="Abdallah Fouad, Full Stack Web Developer specializing in Laravel, PHP and JavaScript. Portfolio of 26 projects across WordPress, Laravel, PHP, AI and JavaScript.">
+<link rel="icon" href="./img/about.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="boot" id="boot">
+  <div class="boot__box">
+    <p class="boot__line"><span class="boot__prompt">$</span> starting portfolio.exe</p>
+    <div class="boot__bar"><span id="bootProgress"></span></div>
+    <p class="boot__pct" id="bootPct">0%</p>
+  </div>
+</div>
+
+<a class="skip-link" href="#home">Skip to content</a>
+
+<header class="titlebar" id="titlebar">
+  <div class="titlebar__row">
+    <div class="titlebar__dots" aria-hidden="true">
+      <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
+    </div>
+    <div class="titlebar__path">Abdallah Fouad — Portfolio</div>
+    <button class="titlebar__menu" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="tabs" id="tabs" aria-label="Section navigation">
+    <a href="#home" class="tab is-active" data-target="home"><span class="tab__icon tab__icon--js"></span>Home</a>
+    <a href="#about" class="tab" data-target="about"><span class="tab__icon tab__icon--php"></span>About</a>
+    <a href="#skills" class="tab" data-target="skills"><span class="tab__icon tab__icon--json"></span>Skills</a>
+    <a href="#experience" class="tab" data-target="experience"><span class="tab__icon tab__icon--log"></span>Experience</a>
+    <a href="#portfolio" class="tab" data-target="portfolio"><span class="tab__icon tab__icon--sql"></span>Portfolio</a>
+    <a class="tab tab--cv" href="./Abdallah%20Fouad%20CV.pdf" target="_blank" rel="noopener">⭳ CV.pdf</a>
+  </nav>
+</header>
+
+<div class="workspace">
+
+  <aside class="sidebar" aria-label="File explorer">
+    <p class="sidebar__title">EXPLORER</p>
+    <p class="sidebar__project">▾ ABDALLAH-FOUAD</p>
+    <ul class="sidebar__tree">
+      <li><a href="#home" data-target="home"><span class="tab__icon tab__icon--js"></span>Home</a></li>
+      <li><a href="#about" data-target="about"><span class="tab__icon tab__icon--php"></span>About</a></li>
+      <li><a href="#skills" data-target="skills"><span class="tab__icon tab__icon--json"></span>Skills</a></li>
+      <li><a href="#experience" data-target="experience"><span class="tab__icon tab__icon--log"></span>Experience</a></li>
+      <li><a href="#portfolio" data-target="portfolio"><span class="tab__icon tab__icon--sql"></span>Portfolio</a></li>
+    </ul>
+    <div class="sidebar__status">
+      <p><span class="dot-live"></span> available for work</p>
+      <p>Cairo, Egypt</p>
+    </div>
+  </aside>
+
+  <main id="main">
+
+    <!-- HOME -->
+    <section class="pane" id="home">
+      <div class="pane__gutter" aria-hidden="true"></div>
+  
+      <div class="hero">
+        <p class="hero__eyebrow">// Hello, I'm</p>
+        <h1 class="hero__name" id="typedName"><span class="cursor">&nbsp;</span></h1>
+        <p class="hero__role">Full Stack Web Developer <span class="hero__role-dim">specializing in Laravel, PHP &amp; JavaScript</span></p>
+        <p class="hero__desc">Building scalable and high-performance web applications — from custom WordPress builds to Laravel platforms, RESTful APIs and interactive front ends.</p>
+        <div class="hero__actions">
+          <a href="#portfolio" class="btn btn--primary" data-target="portfolio">view portfolio</a>
+          <a href="./Abdallah%20Fouad%20CV.pdf" class="btn btn--ghost">download my cv</a>
+        </div>
+        <div class="hero__quick">
+          <a href="tel:01156460836" class="quick-link" aria-label="Call Abdallah">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            01156460836
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=2001156460836" target="_blank" rel="noopener" class="quick-link" aria-label="WhatsApp Abdallah">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10.1 9 9.6 7.8 9.4 7.3c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 20.2 12 8.2 8.2 0 0 1 12 20.2z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+      <p class="scroll-hint">scroll ↓</p>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="pane" id="about">
+      <p class="section-tag"><span class="ln">•</span> About</p>
+      <h2 class="section-title">01 <span>/</span> About</h2>
+
+      <div class="about-grid">
+        <figure class="about-photo">
+        </figure>
+
+        <div class="about-body">
+          <p class="about-summary">Web Developer with a strong passion for detail and clean architecture, specializing in building and maintaining modern, high-performance, dynamic web applications. Proficient in HTML5, CSS3 and JavaScript, focused on crafting responsive, user-centric UIs — with expert command of PHP and SQL for robust back-end logic, and hands-on experience using Laravel to deliver secure and scalable solutions. Work is guided by solid OOP principles: clean code, performance optimization and continuous technical growth.</p>
+
+          <div class="stat-row">
+            <div class="stat-card">
+              <span class="stat-card__num">3</span>
+              <span class="stat-card__label">Years Experience</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__num">26</span>
+              <span class="stat-card__label">Projects Shipped</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__num">8</span>
+              <span class="stat-card__label">Core Technologies</span>
+            </div>
+          </div>
+
+          <dl class="meta-list">
+            <div class="meta-list__row"><dt>education</dt><dd>Bachelor of Arts</dd></div>
+            <div class="meta-list__row"><dt>diploma</dt><dd>Web Development (Full Stack)</dd></div>
+            <div class="meta-list__row"><dt>location</dt><dd>Cairo, Egypt</dd></div>
+            <div class="meta-list__row"><dt>email</dt><dd><a href="mailto:abdallahforweb@gmail.com">abdallahforweb@gmail.com</a></dd></div>
+            <div class="meta-list__row"><dt>phone</dt><dd><a href="tel:01156460836">01156460836</a></dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="pane" id="skills">
+      <p class="section-tag"><span class="ln">•</span> Skills</p>
+      <h2 class="section-title">02 <span>/</span> Skills</h2>
+      <p class="section-lede">A back end built on PHP, Laravel and SQL, paired with hands-on front-end craft in JavaScript and jQuery.</p>
+
+      <div class="skills-grid" id="skillsGrid"></div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="pane" id="experience">
+      <p class="section-tag"><span class="ln">•</span> Experience</p>
+      <h2 class="section-title">03 <span>/</span> Experience</h2>
+
+      <div class="commits" id="commits"></div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="pane" id="portfolio">
+      <p class="section-tag"><span class="ln">•</span> Portfolio</p>
+      <h2 class="section-title">04 <span>/</span> Portfolio</h2>
+      <p class="section-lede">SELECT * FROM projects — 26 rows across WordPress, Laravel, PHP, AI, JavaScript, API and OOP.</p>
+
+      <div class="filters" id="filters" role="tablist" aria-label="Filter projects by category"></div>
+
+      <div class="projects-grid" id="projectsGrid"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="" id="contact">
+
+    </section>
+
+    <footer class="footer">
+      <p>&copy; <span id="year"></span> Abdallah Fouad.</p>
+      <button class="to-top" id="toTop" aria-label="Back to top">↑ home</button>
+    </footer>
+  </main>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
