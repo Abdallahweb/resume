@@ -1,6 +1,3 @@
-/* =========================================================
-   TOKENS
-   ========================================================= */
 :root{
   --bg-void:#0a0d12;
   --bg-panel:#10141b;
@@ -63,9 +60,7 @@ button{font-family:inherit;}
 }
 .skip-link:focus{left:12px; top:12px;}
 
-/* =========================================================
-   BOOT SCREEN
-   ========================================================= */
+
 .boot{
   position:fixed; inset:0; z-index:1000;
   background:var(--bg-void);
@@ -80,9 +75,7 @@ button{font-family:inherit;}
 .boot__bar span{display:block; height:100%; width:0%; background:linear-gradient(90deg,var(--blue),var(--mint)); transition:width .2s linear;}
 .boot__pct{margin:10px 0 0; font-size:.75rem; color:var(--text-faint);}
 
-/* =========================================================
-   TITLEBAR
-   ========================================================= */
+
 .titlebar{
   position:sticky; top:0; z-index:100;
   background:var(--bg-panel);
@@ -137,9 +130,7 @@ button{font-family:inherit;}
 .tab__icon--sql{background:var(--blue);}
 .tab__icon--sh{background:var(--pink);}
 
-/* =========================================================
-   WORKSPACE LAYOUT
-   ========================================================= */
+
 .workspace{
   display:flex;
   max-width:1440px;
@@ -175,9 +166,7 @@ button{font-family:inherit;}
 
 main{flex:1; min-width:0;}
 
-/* =========================================================
-   GENERIC "PANE" / SECTION STRUCTURE
-   ========================================================= */
+
 .pane{
   position:relative;
   padding:96px 48px 96px 56px;
@@ -199,9 +188,7 @@ main{flex:1; min-width:0;}
 .section-title span{color:var(--text-faint); font-weight:400; margin:0 6px;}
 .section-lede{color:var(--text-dim); max-width:620px; margin:0 0 40px; font-size:1rem;}
 
-/* =========================================================
-   HOME / HERO
-   ========================================================= */
+
 .pane__code{
   font-family:var(--font-mono); font-size:.82rem;
   background:var(--bg-panel); border:1px solid var(--border);
@@ -264,9 +251,7 @@ main{flex:1; min-width:0;}
 }
 @keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
 
-/* =========================================================
-   ABOUT
-   ========================================================= */
+
 .about-summary{color:var(--text-dim); max-width:640px; margin:0 0 32px;}
 
 .stat-row{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:32px;}
@@ -290,9 +275,7 @@ main{flex:1; min-width:0;}
 .meta-list__row dd{margin:0; color:var(--text-primary); text-align:right;}
 .meta-list__row dd a:hover{color:var(--blue);}
 
-/* =========================================================
-   SKILLS
-   ========================================================= */
+
 .skills-grid{
   display:grid; grid-template-columns:repeat(auto-fill, minmax(240px,1fr));
   gap:16px;
@@ -310,9 +293,7 @@ main{flex:1; min-width:0;}
 .skill-card__name{font-family:var(--font-mono); font-weight:600; font-size:.98rem;}
 .skill-card__desc{font-size:.85rem; color:var(--text-dim); margin:0;}
 
-/* =========================================================
-   EXPERIENCE — commit log
-   ========================================================= */
+
 .commits{max-width:760px; border-left:2px solid var(--border); margin-left:8px;}
 .commit{position:relative; padding:0 0 40px 32px;}
 .commit:last-child{padding-bottom:0;}
@@ -335,9 +316,7 @@ main{flex:1; min-width:0;}
 }
 .commit__diff li::before{content:'+'; position:absolute; left:0; color:var(--mint);}
 
-/* =========================================================
-   PORTFOLIO
-   ========================================================= */
+
 .filters{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:32px;}
 .filter-btn{
   font-family:var(--font-mono); font-size:.78rem;
@@ -386,9 +365,7 @@ main{flex:1; min-width:0;}
 .project-card__link:hover{color:var(--mint);}
 .project-card.is-hidden{display:none;}
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+
 .footer{
   display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;
   padding:26px 56px; font-family:var(--font-mono); font-size:.78rem; color:var(--text-faint);
@@ -396,15 +373,11 @@ main{flex:1; min-width:0;}
 .to-top{background:none; border:1px solid var(--border); color:var(--text-dim); border-radius:999px; padding:8px 16px; cursor:pointer; font-size:.75rem;}
 .to-top:hover{color:var(--blue); border-color:var(--blue);}
 
-/* =========================================================
-   REVEAL ON SCROLL
-   ========================================================= */
+
 .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
 .reveal.is-visible{opacity:1; transform:translateY(0);}
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
+
 @media (max-width:1080px){
   .sidebar{display:none;}
   .titlebar__menu{display:flex;}

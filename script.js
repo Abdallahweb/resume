@@ -1,8 +1,6 @@
 $(function () {
 
-  /* =========================================================
-     DATA — sourced from abdallahweb.github.io/resume
-     ========================================================= */
+  
   const SKILLS = [
     { ext: "js",   name: "JavaScript", desc: "Developing interactive, dynamic user interfaces and client-side logic." },
     { ext: "jq",   name: "jQuery",     desc: "Accelerating and simplifying interactive front-end development by streamlining complex DOM and AJAX tasks." },
@@ -86,9 +84,7 @@ $(function () {
 
   ].map(f => f.key === "all" ? f : { ...f, count: PROJECTS.filter(p => p.cat === f.key).length });
 
-  /* =========================================================
-     BOOT SCREEN
-     ========================================================= */
+
   (function boot(){
     let pct = 0;
     const $bar = $("#bootProgress"), $pct = $("#bootPct"), $boot = $("#boot");
@@ -104,9 +100,7 @@ $(function () {
     }, 130);
   })();
 
-  /* =========================================================
-     RENDER: SKILLS
-     ========================================================= */
+
   const $skillsGrid = $("#skillsGrid");
   SKILLS.forEach(s => {
     $skillsGrid.append(
@@ -120,9 +114,7 @@ $(function () {
     );
   });
 
-  /* =========================================================
-     RENDER: EXPERIENCE
-     ========================================================= */
+
   const $commits = $("#commits");
   EXPERIENCE.forEach((job, i) => {
     const $diff = $("<ul class='commit__diff'>");
@@ -140,9 +132,7 @@ $(function () {
     );
   });
 
-  /* =========================================================
-     RENDER: PORTFOLIO FILTERS + PROJECTS
-     ========================================================= */
+  
   const $filters = $("#filters");
   FILTERS.forEach((f, i) => {
     $filters.append(
@@ -188,9 +178,6 @@ $(function () {
     });
   });
 
-  /* =========================================================
-     RENDER: TERMINAL (contact)
-     ========================================================= */
   const $term = $("#terminalBody");
   const outputLines = [
     { label: "name",     value: "Abdallah Fouad" },
@@ -227,9 +214,6 @@ $(function () {
   }, { threshold: 0.4 });
   termObserver.observe(document.getElementById("contact"));
 
-  /* =========================================================
-     CONTACT FORM -> mailto
-     ========================================================= */
   $("#contactForm").on("submit", function (e) {
     e.preventDefault();
     const name = $("#cf-name").val().trim();
@@ -247,9 +231,7 @@ $(function () {
     $hint.text("Opening your email app…").css("color", "var(--mint)");
   });
 
-  /* =========================================================
-     HERO NAME TYPING EFFECT
-     ========================================================= */
+  
   (function typeName(){
     const full = "Abdallah Fouad";
     const $el = $("#typedName");
@@ -263,9 +245,7 @@ $(function () {
     })();
   })();
 
-  /* =========================================================
-     NAV: smooth scroll + mobile toggle + scrollspy
-     ========================================================= */
+  
   $("a[data-target]").on("click", function (e) {
     e.preventDefault();
     const target = document.getElementById($(this).data("target"));
@@ -296,9 +276,8 @@ $(function () {
   }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
   sections.forEach(s => spy.observe(s));
 
-  /* =========================================================
-     REVEAL ON SCROLL
-     ========================================================= */
+  
+  
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -309,9 +288,7 @@ $(function () {
   }, { threshold: 0.12 });
   document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
 
-  /* =========================================================
-     BACK TO TOP + YEAR
-     ========================================================= */
+  
   $("#year").text(new Date().getFullYear());
   $("#toTop").on("click", function () {
     document.getElementById("home").scrollIntoView({ behavior: "smooth" });
