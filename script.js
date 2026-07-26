@@ -67,7 +67,10 @@ $(function () {
     { title:"JavaScript Alarm Clock", cat:"javascript", tags:["JavaScript","JQuery"], desc:"A simple alarm clock app allowing users to set alarms and receive notifications at scheduled times.", img:"./img/portfolio/alarm.webp", url:"https://abdallahweb.github.io/Alarm" },
     { title:"Squid Game Using JavaScript", cat:"javascript", tags:["JavaScript","JQuery"], desc:"A browser game inspired by Squid Game, showcasing DOM manipulation, event handling and game logic.", img:"./img/portfolio/Squid.webp", url:"https://abdallahweb.github.io/Squid/" },
     { title:"Photo Filter Project", cat:"javascript", tags:["JavaScript","JQuery"], desc:"A web app enabling users to apply image filters in real time, demonstrating dynamic styling.", img:"./img/portfolio/PhotoFilter.webp", url:"https://abdallahweb.github.io/Filter/" },
-    { title:"Game Project", cat:"javascript", tags:["JavaScript","JQuery"], desc:"A browser game inspired by the classic Dinosaur game — collisions, scoring and event handling.", img:"./img/portfolio/hunter.webp", url:"https://abdallahweb.github.io/hunter" }
+    { title:"Game Project", cat:"javascript", tags:["JavaScript","JQuery"], desc:"A browser game inspired by the classic Dinosaur game — collisions, scoring and event handling.", img:"./img/portfolio/hunter.webp", url:"https://abdallahweb.github.io/hunter" },
+    { title:"Personal Portfolio", cat:"Design", tags:["Html" , "Css","JavaScript","JQuery"], desc:"A responsive personal portfolio website built with HTML, CSS, JavaScript, and jQuery to showcase my skills, projects, and contact information.", img:"./img/portfolio/portfolio.webp", url:"https://abdallahweb.github.io/portfolio" }
+
+  
   ];
 
   const FILTERS = [
@@ -78,7 +81,9 @@ $(function () {
     { key:"ai", label:"AI" },
     { key:"javascript", label:"JavaScript" },
     { key:"api", label:"API" },
-    { key:"oop", label:"OOP" }
+    { key:"oop", label:"OOP" },
+    { key:"Design", label:"Design" }
+
   ].map(f => f.key === "all" ? f : { ...f, count: PROJECTS.filter(p => p.cat === f.key).length });
 
   /* =========================================================

@@ -376,7 +376,7 @@ main{flex:1; min-width:0;}
 .project-card__desc{font-size:.85rem; color:var(--text-dim); margin:0; flex:1;}
 .project-card__tags{display:flex; flex-wrap:wrap; gap:6px; margin:4px 0 2px;}
 .project-card__tags span{
-  font-family:var(--font-mono); font-size:.68rem; color:var(--text-faint);
+  font-family:var(--font-mono); font-size:.68rem; color:#fff;
   background:var(--bg-panel-3); padding:3px 8px; border-radius:4px;
 }
 .project-card__link{
